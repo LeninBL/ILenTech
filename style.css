@@ -252,9 +252,6 @@ nav {
 
 
     min-height: 100vh;
-    background-image: url('imagenes/computador.gif');
-    background-position: center top;
-    background-repeat: repeat; 
     text-align: center;
     padding: 50px;
 }
@@ -392,11 +389,7 @@ nav {
 
 #about {
     padding: 20px;
-    min-height: 100vh;
-    background-image: url('imagenes/computador.gif');
-    background-position: center top;
-    background-repeat: repeat; 
-   
+    min-height: 100vh;   
 }
 
 
