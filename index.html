@@ -319,13 +319,11 @@
         </section>
 
        
-
+ <!--SECCION  CONTACTO-->
         <section id="contact" class="section">
             <h2>Contacto</h2>
         
-            <!-- Formulario de contacto -->
             <form id="contact-form" action="https://formsubmit.co/dany20bl69@gmail.com" method="POST">
-
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required>
             
@@ -335,16 +333,14 @@
                 <label for="message">Mensaje:</label>
                 <textarea id="message" name="message" required></textarea>
             
-                <!-- Campo Honeypot -->
-                <input type="text" name="honeypot" style="display:none" />
-            
-                <!-- Google reCAPTCHA -->
-                <div class="g-recaptcha" data-sitekey="6Leq1NcqAAAAAPs6aRRuhH8dovucH5Unn722Nqii"></div>
+                <input type="hidden" name="_subject" value="Nuevo mensaje de contacto">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+
             
                 <button type="submit">ENVIAR</button>
             </form>
-            
-            <p id="status-message" style="display: none; color: green; background-color: white;">✅ ¡Mensaje enviado con éxito!</p>
+    
             
         </section>
 

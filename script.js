@@ -163,13 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------Contacto-----------------------------------------------------------------
-document.getElementById("contact-form").addEventListener("submit", function (event) {
+document.getElementById("contact-form").addEventListener("submit", function (event) { 
   event.preventDefault(); // Evita el envío estándar
 
   const form = this;
+  const formData = new FormData(form);
+  const honeypotField = document.querySelector("input[name='_honey']");
   const inputs = form.querySelectorAll("input, textarea, button");
-  const statusMessage = document.getElementById("status-message");
-  const honeypotField = document.querySelector("input[name='honeypot']");
 
   // Validación de honeypot
   if (honeypotField.value) {
@@ -177,43 +177,31 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
       return;
   }
 
-  // Verificar reCAPTCHA
-  const recaptchaResponse = grecaptcha.getResponse();
-  if (recaptchaResponse === "") {
-      alert("Por favor, completa el reCAPTCHA.");
-      return;
-  }
-
   // Deshabilitar los campos mientras se envía el formulario
   inputs.forEach((input) => (input.disabled = true));
 
-  // Enviar el formulario con FormSubmit
+  // Enviar formulario con fetch a FormSubmit
   fetch("https://formsubmit.co/ajax/dany20bl69@gmail.com", {
-    method: "POST",
-    body: new FormData(form), // FormData maneja la codificación
-})
-
-      .then((response) => {
-          if (response.ok) {
-              return response.json();
-          } else {
-              throw new Error("Error en la respuesta del servidor");
-          }
-      })
-      .then((data) => {
-          statusMessage.style.display = "block"; // Mostrar mensaje de éxito
-          form.reset(); // Limpiar formulario
-
-          // Ocultar el mensaje después de 3 segundos
-          setTimeout(() => {
-              statusMessage.style.display = "none";
-          }, 3000);
-      })
-      .catch((error) => {
-          console.error("Error:", error);
-          alert("Error al enviar el mensaje. Inténtelo de nuevo.");
-      })
-      .finally(() => {
-          inputs.forEach((input) => (input.disabled = false)); // Habilitar los campos
-      });
+      method: "POST",
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          alert("✅ ¡Mensaje enviado con éxito!");
+          form.reset();
+      } else {
+          alert("❌ Error al enviar el mensaje.");
+      }
+  })
+  .catch(error => {
+      console.error("Error:", error);
+      alert("❌ Hubo un problema al enviar el mensaje.");
+  })
+  .finally(() => {
+      // Habilitar los campos nuevamente
+      inputs.forEach((input) => (input.disabled = false));
+  });
 });
+
+
