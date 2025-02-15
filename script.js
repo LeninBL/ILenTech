@@ -168,8 +168,6 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
   const form = this;
   const inputs = form.querySelectorAll("input, textarea, button");
-  const emailField = document.getElementById("email");
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const statusMessage = document.getElementById("status-message");
   const honeypotField = document.querySelector("input[name='honeypot']");
 
@@ -179,11 +177,6 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
       return;
   }
 
-  // Validación de correo
-  if (!emailPattern.test(emailField.value)) {
-      alert("Por favor, ingrese un correo válido.");
-      return;
-  }
 
   // Verificar reCAPTCHA
   const recaptchaResponse = grecaptcha.getResponse();
@@ -196,7 +189,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   inputs.forEach((input) => (input.disabled = true));
 
   // Enviar formulario con fetch a FastAPI
-  fetch("https://i-len-tech.vercel.app/contact", {
+  fetch("/contact", {
       method: "POST",
       body: new FormData(form),
       headers: {
