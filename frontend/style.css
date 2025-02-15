@@ -1,0 +1,1136 @@
+/*------------------------Reseteo general------------------------------ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/*---------------------------------------- Estilos generales del cuerpo ----------------------------*/
+body,
+html {
+    /* Tamaño base para escalabilidad */
+    color: #000000;
+    /* Color del texto principal */
+    background-image: url('imagenes/computador.gif');
+    background-position: center top;
+    background-repeat: repeat;
+    line-height: 1.6;
+    /* Mejora la legibilidad con espacio entre líneas */
+    height: 100%;
+    /* Asegura que la página tenga altura completa */
+    margin: 0;
+    display: flex;
+
+    flex-direction: column;
+}
+
+/* Estilo de opacidad por menu responsivo */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Color oscuro con transparencia */
+    z-index: 999;
+    /* Asegúrate de que el overlay esté detrás del menú */
+}
+
+/* Estilo del contenido principal */
+main {
+    flex: 1;
+    /* Hace que el contenido principal ocupe el espacio restante */
+    padding-top: calc(4em + 8px);
+    /* Ajusta dinámicamente según la altura del encabezado */
+    width: 100%;
+}
+
+/* Secciones principales */
+.section {
+    scroll-margin-top: 80px;
+    padding: 40px 10px;
+    margin-top: -8px;
+    /* Espacio alrededor del contenido de cada sección */
+}
+
+
+/*--------------------------------------------- Estilo del encabezado ----------------------------------------------*/
+header {
+    background-image: url('imagenes/fondo.jpg');
+    background-size: cover;
+    /* Esto hace que la imagen cubra todo el fondo */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para los enlaces activos */
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    list-style: none;
+}
+
+
+.nav-list li a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0rem 0rem;
+    /* Agregar algo de espacio en los lados */
+    font-size: 1.2rem;
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    color: rgb(255, 140, 0);
+    /* Un color por defecto */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: white;
+    transform: scale(1.1);
+    /* Ligera ampliación para darle un efecto dinámico */
+}
+
+.nav-list li a.active {
+    color: #fff;
+    transform: scale(1.1);
+    /* También se puede ampliar en el estado activo */
+
+}
+
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.abrir-menu:hover,
+.cerrar-menu:hover {
+    color: rgb(255, 140, 0);
+
+}
+
+/* Para pantallas grandes*/
+
+@media screen and (min-width: 1024px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .nav-list {
+        display: flex;
+    }
+
+    .abrir-menu {
+        display: none;
+    }
+
+    .cerrar-menu {
+        display: none;
+    }
+}
+
+/* Para móviles (pantallas menores a 1069px) */
+@media screen and (max-width: 1069px) {
+    .nav-list {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: #000000;
+        transform: translateX(100%);
+        transition: transform 0s ease;
+        box-shadow: -4px 0 10px rgba(151, 123, 89, 0.8);
+
+    }
+
+    .nav-list.visible {
+        transform: translateX(0);
+    }
+
+    .abrir-menu {
+        display: block;
+        align-self: flex-end;
+        position: absolute;
+        right: -1rem;
+        top: -1rem;
+        margin-top: 30px;
+        padding: 15px 30px;
+    }
+
+    .cerrar-menu {
+        display: block;
+        align-self: flex-end;
+        margin-bottom: 1rem;
+        padding: 15px 30px;
+    }
+
+    header {
+        padding: 1rem 1.1rem;
+    }
+
+    .nav-list li a {
+        font-size: 0.9rem;
+        margin-left: 9px;
+
+    }
+}
+
+
+/* Estilo del logo */
+@keyframes cambioColor {
+    0% {
+        color: rgb(204, 85, 0);
+        /* Anaranjado oscuro */
+        text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4);
+        /* Brillo suave */
+    }
+
+    20% {
+        color: rgb(255, 110, 0);
+        /* Naranja intermedio */
+        text-shadow: 0 0 8px rgba(255, 110, 0, 0.7), 0 0 15px rgba(255, 110, 0, 0.4);
+        /* Brillo medio */
+    }
+
+    40% {
+        color: rgb(255, 140, 0);
+        /* Anaranjado cálido */
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5);
+        /* Brillo fuerte */
+    }
+
+    60% {
+        color: rgb(255, 170, 0);
+        /* Un anaranjado dorado */
+        text-shadow: 0 0 12px rgba(255, 170, 0, 0.8), 0 0 25px rgba(255, 170, 0, 0.6);
+        /* Brillo dorado más intenso */
+    }
+
+    80% {
+        color: rgb(255, 140, 0);
+        /* Vuelve al anaranjado cálido */
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5);
+        /* Brillo fuerte */
+    }
+
+    100% {
+        color: rgb(204, 85, 0);
+        /* Anaranjado oscuro */
+        text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4);
+        /* Brillo suave */
+    }
+
+}
+
+.logo {
+    letter-spacing: 10px;
+    font-size: 20px;
+    font-family: 'Orbitron';
+    font-weight: bold;
+    display: inline-block;
+    animation: cambioColor 10s infinite linear;
+    /* Animación continua */
+    text-shadow: 0 0 5px rgba(255, 223, 79, 0.8);
+    /* Sombra inicial dorada */
+}
+
+/*----------------------------------- Sección Inicio --------------------------------------------------*/
+#home {
+    min-height: 100vh;
+    text-align: center;
+    padding: 50px;
+}
+
+#home h1 {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #ffffff;
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    background: rgba(0, 0, 0, 0.322);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Sombra sutil */
+
+}
+
+.enlace {
+    color: #00f7ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.content {
+    position: relative;
+    flex: 1 1 30%;
+    /* 3 columnas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 50px 20px 20px;
+    color: #ffffff;
+    border-radius: 12px;
+    background: rgb(0 0 0 / 81%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.425);
+}
+
+.content>h3 {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: #ff6600;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.image img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s;
+    animation: scale-up 2.5s infinite alternate ease-in-out;
+}
+
+
+@keyframes scale-up {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Responsive: 3 filas en pantallas pequeñas */
+@media (max-width: 890px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        flex: 1 1 100%;
+        width: 90%;
+    }
+
+    .image img {
+        width: 100px;
+    }
+}
+
+
+
+/*------------------------BOTONES home------------------------------*/
+#home button {
+
+    padding: 15px 30px;
+    border-radius: 12px;
+    background: rgb(0 0 0 / 81%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.425);
+
+    color: #ffffff;
+
+
+    cursor: pointer;
+
+    margin-top: 30px;
+
+    font-size: 18px;
+
+    text-transform: uppercase;
+
+
+}
+
+#home button:hover {
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+/*-----------------------------------------ACERCA DE MI ---------------------------------------------------------------------*/
+
+#about {
+    padding: 20px;
+    min-height: 100vh;
+}
+
+
+/* Contenedor principal */
+.about-content {
+    max-width: 1000px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    /* Cambia de columna a fila */
+    align-items: stretch;
+}
+
+/* Secciones */
+.about-content-seccion {
+    flex: 1;
+    /* Hace que ambas secciones ocupen el mismo espacio */
+    min-width: 45%;
+    /* Evita que se achiquen demasiado */
+
+    padding: 20px;
+    background: rgb(0 0 0 / 81%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(170, 166, 166, 0.021);
+    animation: cambioColorBordeDiamante 4s infinite ease-in-out;
+
+}
+
+/* Details (Expansible) */
+details {
+
+    border-radius: 10px;
+    padding: 10px;
+    background: #1f202277;
+    cursor: pointer;
+    color: #ffffff;
+
+}
+
+details[open] {
+    background: #1f202277;
+    color: #ffffff;
+
+}
+
+/* Summary */
+summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+summary i {
+    transition: transform 0.7s ease;
+}
+
+/* Rotación del icono al abrir */
+details[open] summary i {
+    transform: rotate(180deg);
+}
+
+/* Habilidades (Iconos) */
+.habilidades {
+    margin-top: 15px;
+    padding: 10px;
+    background: #1f202277;
+    border-radius: 10px;
+    text-align: center;
+
+
+}
+
+/* Contenedor de iconos */
+.Tics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+/* Imágenes de iconos */
+.Tics img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto hover en iconos */
+.Tics img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+
+/* Contenedor de la galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+
+
+.certificados {
+    margin-top: 35px;
+
+
+}
+
+.certificados h2 {
+    color: white;
+    text-align: center;
+    background: #1f202277;
+    border-radius: 5px;
+
+}
+
+/* Contenedor de cada certificado */
+.certificado {
+    text-align: center;
+    background: rgba(35, 35, 36, 0.39);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: cambiocertificadocolor 6s infinite ease-out;
+}
+
+.certificado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Miniaturas de certificados */
+.miniatura {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+    filter: brightness(88%);
+}
+
+.miniatura:hover {
+    transform: scale(1.1);
+}
+
+/* Modal para ampliar imágenes */
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen grande dentro del modal */
+.modal img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* Botón para cerrar el modal */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        /* Cambia a columna en pantallas pequeñas */
+        gap: 10px;
+        /* Reduce el espacio entre secciones */
+    }
+
+    .about-content-seccion {
+        min-width: 100%;
+        /* Ocupar todo el ancho disponible */
+    }
+}
+
+
+
+
+
+
+@keyframes cambioColorBordeDiamante {
+    0% {
+        border-color: rgb(138, 43, 226);
+        /* Morado oscuro */
+        box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4);
+        /* Brillo suave */
+    }
+
+    20% {
+        border-color: rgb(186, 85, 211);
+        /* Morado intermedio */
+        box-shadow: 0 0 8px rgba(186, 85, 211, 0.7), 0 0 15px rgba(186, 85, 211, 0.4);
+        /* Brillo medio */
+    }
+
+    40% {
+        border-color: rgb(221, 160, 221);
+        /* Morado claro */
+        box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5);
+        /* Brillo fuerte */
+    }
+
+    60% {
+        border-color: rgb(255, 0, 255);
+        /* Morado brillante */
+        box-shadow: 0 0 12px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.6);
+        /* Brillo intenso */
+    }
+
+    80% {
+        border-color: rgb(221, 160, 221);
+        /* Vuelve al morado claro */
+        box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5);
+        /* Brillo fuerte */
+    }
+
+    100% {
+        border-color: rgb(138, 43, 226);
+        /* Morado oscuro */
+        box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4);
+        /* Brillo suave */
+    }
+
+}
+
+@keyframes cambiocertificadocolor {
+    0% {
+        border-color: rgb(0, 85, 204);
+        /* Azul oscuro */
+        box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4);
+        /* Brillo suave */
+    }
+
+    20% {
+        border-color: rgb(0, 110, 255);
+        /* Azul intermedio */
+        box-shadow: 0 0 8px rgba(0, 110, 255, 0.7), 0 0 15px rgba(0, 110, 255, 0.4);
+        /* Brillo medio */
+    }
+
+    40% {
+        border-color: rgb(0, 140, 255);
+        /* Azul claro */
+        box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5);
+        /* Brillo fuerte */
+    }
+
+    60% {
+        border-color: rgb(0, 170, 255);
+        /* Azul brillante */
+        box-shadow: 0 0 12px rgba(0, 170, 255, 0.8), 0 0 25px rgba(0, 170, 255, 0.6);
+        /* Brillo intenso */
+    }
+
+    80% {
+        border-color: rgb(0, 140, 255);
+        /* Vuelve al azul claro */
+        box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5);
+        /* Brillo fuerte */
+    }
+
+    100% {
+        border-color: rgb(0, 85, 204);
+        /* Azul oscuro */
+        box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4);
+        /* Brillo suave */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------ Sección Servicios -------------------------------------------------------------*/
+
+#functions {
+
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px 0;
+    min-height: 53vh;
+
+}
+
+/* Contenedor principal */
+.organizador-functions {
+    display: grid;
+    grid-template-columns: 20% 55% 20%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 10px;
+}
+
+/* Contenedor de texto */
+.contenedor-functions {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background: rgb(0 0 0 / 81%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(170, 166, 166, 0.021);
+    animation: cambioColorBordeDiamante 4s infinite ease-in-out;
+    position: relative;
+    min-height: 300px;
+    /* Altura mínima para evitar saltos */
+}
+
+/* Flechas de navegación */
+.flecha {
+    background: none;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 10px;
+
+}
+
+.flecha i {
+    background: rgba(0, 0, 0, 0.897);
+    color: #fff;
+    border: 2px solid rgb(255, 255, 255);
+    animation: cambioColor 1s infinite linear;
+}
+
+.flecha:hover {
+    color: #d400d4;
+}
+
+/* Contenido de los textos */
+.divTextoServicios {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+    position: absolute;
+    /* Mantenemos el posicionamiento absoluto */
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: justify;
+}
+
+.divTextoServicios.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out;
+    position: static;
+    /* Cambiamos a posición estática cuando está activo */
+}
+
+/* Estilos para el texto dentro de los divs */
+.divTextoServicios h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #00bcd4;
+    text-align: center;
+}
+
+.divTextoServicios h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.divTextoServicios p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-left: 30px;
+    color: #ccc;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .organizador-functions {
+        grid-template-columns: 12% 70% 12%;
+    }
+
+    .flecha {
+        font-size: 1.5rem;
+    }
+
+    .divTextoServicios h2 {
+        font-size: 1.2rem;
+    }
+
+    .divTextoServicios h1 {
+        font-size: 1rem;
+    }
+
+    .divTextoServicios p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+/* ----------------------------------------Sección Portafolio - Texto centrado */
+#portfolio {
+
+    min-height: 63vh;
+    background-image: url('imagenes/construccion2.gif');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: repeat;
+
+
+}
+
+#portfolio h1 {
+    text-align: center;
+    margin: auto;
+    color: black;
+    width: 100%;
+    border: #000000;
+    background-color: yellow;
+    letter-spacing: 13px;
+
+}
+
+
+
+
+/* -----------------------------------------------------------------------------------Estilos generales para la sección de contacto ---------------------------------*/
+#contact {
+
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    background-image: url('imagenes/computador2.gif');
+    background-position: center top;
+    background-repeat: repeat;
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilos para el formulario */
+#contact form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgb(0 0 0 / 88%);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgb(0 0 0 / 89%);
+}
+
+#contact label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.616);
+    color: #000000;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #ffffff;
+    background: rgb(255, 255, 255);
+    outline: none;
+    transform: scale(1.02);
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#contact button {
+    padding: 12px 1px;
+    background: #7ce7e4;
+    color: #000000;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#contact button:hover {
+    background: #00cce7;
+    transform: translateY(-3px);
+
+
+
+}
+
+/* Efectos de hover para los inputs y textarea */
+#contact input:hover,
+#contact textarea:hover {
+    border-color: #000000;
+    background: rgba(255, 255, 255, 0.87);
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #contact {
+        padding: 2rem 1rem;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    #contact form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact h2 {
+        font-size: 1.75rem;
+    }
+
+    #contact input,
+    #contact textarea {
+        padding: 10px;
+    }
+
+    #contact button {
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+
+
+
+/*-----------------------------------------Estilos generales para el pie de página ------------------------------------------------------------------------*/
+
+footer {
+    background-image: url('imagenes/fondo.jpg');
+    background-size: cover;
+    /* Esto hace que la imagen cubra todo el fondo */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    color: #ffffff;
+    padding: 7px 3px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0);
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1200px;
+    margin: 11px auto;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1 1 30%;
+    /* Distribución flexible de los elementos */
+    text-align: center;
+    max-width: 380px;
+    /* Añadimos un max-width para evitar que los elementos crezcan demasiado */
+}
+
+.footer-left img {
+    width: 180px;
+    margin-bottom: -49px;
+    margin-left: 14px;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a {
+    margin: 0 3px;
+    margin-left: 15px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    letter-spacing: 5px;
+    animation: cambioColor 10s infinite linear;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    margin-bottom: 1px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+
+
+}
+
+.footer-bottom a {
+    color: #ffae00;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        /* Menos espacio entre las secciones en pantallas pequeñas */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        max-width: 100%;
+        /* Se asegura que cada sección ocupe todo el ancho disponible */
+        flex: 1 1 100%;
+    }
+}

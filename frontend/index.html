@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/imagenes/Marca_ ILenTech.jpeg" type="image/jpeg">
+    <title>ILenTech - Portafolio Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <!-- Encabezado con Navegación inicial -->
+    <header>
+        <div class="logo">ILenTech</div>
+
+        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav>
+            <ul class="nav-list" id="nav">
+                <button id="cerrar" class="cerrar-menu"><i class="bi bi-x"></i></button>
+                <li><a href="#home" onclick="presentarSeccion('home')">Inicio</a></li>
+                <li><a href="#about" onclick="presentarSeccion('about')">Acerca de Mí</a></li>
+                <li><a href="#functions" onclick="presentarSeccion('functions')">Funciones</a></li>
+                <li><a href="#portfolio" onclick="presentarSeccion('portfolio')">Carpeta de Proyectos</a></li>
+                <li><a href="#contact" onclick="presentarSeccion('contact')">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <!-- Secciones de Contenido -->
+    <main>
+        <!-- SECCIÓN DE INICIO-->
+        <section id="home" class="section">
+            <h1>💻 &lt;Hola y bienvenido a mi espacio virtual/&gt; 🌐</h1>
+
+            <div class="container">
+                <div class="content">
+                    <h3>📬 ¡Hablemos!</h3>
+                    <div class="text">
+                        <p>Soy DANY LENIN, estudiante de la
+                            <a href="https://sistemasuncp.edu.pe/" target="_blank" class="enlace">Facultad de Ingeniería
+                                de Sistemas</a>
+                            con una sólida base académica proporcionada por la
+                            <a href="https://uncp.edu.pe/" target="_blank" class="enlace">Universidad Nacional del
+                                Centro del Perú (UNCP)</a>.
+                        </p>
+                    </div>
+                    <div class="images-container">
+                        <div class="image">
+                            <a href="#footer1">
+                                <img src="imagenes/iconos/contac.png" alt="Contactos" title="Contáctame">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h3>🚀 Lo que sé hacer</h3>
+                    <div class="text">
+                        <p>Poseo habilidades en <span style="color: rgb(223, 238, 13); font-weight: bold;">desarrollo de
+                                software, ciberseguridad y hacking ético,</span> por lo que aporto soluciones
+                            tecnológicas que contribuyen al éxito estratégico de la organización.</p>
+                    </div>
+                    <div class="images-container">
+                        <div class="image" id="tec">
+                            <a href="#about" onclick="presentarSeccion('about')">
+                                <img src="imagenes/iconos/tecn.png" alt="HARD" title="Habilidades Técnicas">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h3>🤗 Mi esencia </h3>
+                    <div class="text">
+                        <p>Aprendizaje y crecimiento continuo, <span style="color: #34db5e; font-weight: bold;">enfoque
+                                sistémico y capacidad para trabajar en equipo,</span> preparado para contribuir de
+                            manera significativa en entornos dinámicos.</p>
+                    </div>
+                    <div class="images-container">
+                        <div class="image">
+                            <a href="#about" onclick="presentarSeccion('about')">
+                                <img src="imagenes/iconos/soft.png" alt="SOFT" title="Habilidades Blandas">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="presentarSeccion('contact')">
+                <i class="bi bi-envelope"></i> Contáctame
+            </button>
+        </section>
+
+
+
+        <!-- SECCIÓN ACERCA DE MÍ -->
+        <section id="about" class="section">
+            <div class="about-content">
+                <div class="about-content-seccion">
+                    <details class="divTextoAcerca texto-acerca--1">
+                        <summary>
+                            <i class="bi bi-chevron-down"></i>
+                            <p> HABILIDADES TÉCNICAS</p>
+                        </summary>
+                        <p>Poseo habilidades en desarrollo frontend (HTML, CSS, JavaScript) y backend (Python), asi como SQL
+                            Server y MySQL,
+                            habiendo trabajado con metodologías tradicionales y ágiles como SCRUM en proyectos académicos.
+                            Además, cuento
+                            con una especialización en redes, hacking ético y ciberseguridad, con formación en Cisco. Manejo
+                            herramientas
+                            como Nmap, Wireshark y Metasploit, y tengo conocimientos en la implementación de la ISO 27001.
+                            También tengo
+                            conocimientos en el uso de sistemas operativos como Linux, Parrot OS y Windows.</p>
+                    </details>
+                    <div class="habilidades">
+                        <div class="Tics">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg" />
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg" />
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg" />
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" />
+                            <img src="imagenes/iconos/ethical-hacker-icon-illustration-vector.webp" alt="hacking">
+                            <img src="imagenes/iconos/metasploit-framework-logo.svg.png" alt="metasploit">
+                            <img src="imagenes/iconos/office-365-logo.svg" alt="office">
+                            <img src="imagenes/iconos/nmap-logo-256x256-1.png" alt="nmap">
+                            <img src="imagenes/iconos/ingles.png" alt="Ingles">
+    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content-seccion">
+                    <details class="divTextoAcerca texto-acerca--2">
+                        <summary>
+                            <i class="bi bi-chevron-down"></i>
+                            <p> HABILIDADES BLANDAS</p>
+                        </summary>
+                        <p>Soy una persona con habilidades blandas clave: me comunico de manera clara y escucho activamente, colaboro bien en
+                            equipo respetando opiniones y aprendiendo de los demás, resuelvo problemas con creatividad y me adapto fácilmente a
+                            cambios o nuevos entornos.</p>
+                    </details>
+                    <div class="habilidades">
+                        <div class="Tics Tics--2">
+                            <img src="imagenes/iconos/comunicacionefectiva.png" alt="comunicacionefectiva">
+                            <img src="imagenes/iconos/trabajoenequipo.png" alt="trabajoenequipo">
+                            <img src="imagenes/iconos/adaptabilidad.png" alt="adaptabilidad">
+                            <img src="imagenes/iconos/resoluciondeproblemas.png" alt="resoluciondeproblemas">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content certificados">
+                <div class="about-content-seccion">
+                    <h2>MIS CERTIFICADOS</h2>
+                    <div class="galeria">
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/Fronted.jpg"
+                                alt="Certificado de HTML, CSS y JavaScript" class="miniatura">
+                            <p>Certificado de HTML, CSS y JavaScript</p>
+                        </div>
+
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/WORKSHOP ISO 27001 – HACKER MENTOR_page-0001.jpg"
+                                alt="WORKSHOP ISO 27001" class="miniatura">
+                            <p>Certificado de WORKSHOP ISO 27001</p>
+                        </div>
+
+
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/INTRODUCTION TO DATA SCIENCE PYTHON – CONSTANCIA_page-0001.jpg"
+                                alt="INTRODUCTION TO DATA SCIENCE PYTHON" class="miniatura">
+                            <p>Certificado de Introducción a Ciencia de Datos PYTHON</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/CER-Hacking Ético - USOS (virus, malware, troyanos)_page-0001.jpg"
+                                alt="Certificado CER-Hacking Ético - USOS" class="miniatura">
+                            <p>Certificado de Hacking Ético - USOS (virus, malware, troyanos)</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/JUNIOR CYBERSECURITY ANALIST CAREER PATH – CISCO_page-0001.jpg"
+                                alt="Certificado de ANALISTA DE CIBERSEGURIDAD JUNIOR" class="miniatura">
+                            <p>Certificado Analista De ciberseguridad JUNIOR</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/SQL SERVER FUNDAMENTALS – CONSTANCIA_page-0001.jpg"
+                                alt="SQL SERVER FUNDAMENTALS" class="miniatura">
+                            <p>Constancia SQL SERVER FUNDAMENTALS</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/PYTHON FUNDAMENTALS – CONSTANCIA_page-0001.jpg"
+                                alt="Fundamentos de Python" class="miniatura">
+                            <p>Constancia de Fundamentos de Python</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/Python_Essentials_1_Badge20240601-8-py3f3g_page-0001.jpg"
+                                alt="Conceptos básicos de Python 1" class="miniatura">
+                            <p>Certificado de Conceptos básicos de Python 1</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/Python_Essentials_2_Badge20240618-7-orrs2t_page-0001.jpg"
+                                alt="Certificado de Conceptos básicos de Python 2" class="miniatura">
+                            <p>Certificado de Conceptos básicos de Python 2</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/Networking_Basics_Badge20240505-8-8yp3et_page-0001.jpg"
+                                alt="Certificado de Networking_Basics" class="miniatura">
+                            <p>Certificado de Networking Basics</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/ANÁLISIS DE DATOS CON MATLAB – CONSTANCIA_page-0001.jpg"
+                                alt="ANÁLISIS DE DATOS CON MATLAB" class="miniatura">
+                            <p>Certificado de análisis de datos con MATLAB</p>
+                        </div>
+                        <div class="certificado">
+                            <img src="/imagenes/CERTIFICADOS/Networking_Devices_and_Initial_Configuration_Badge20240525-8-j6m40o_page-0001.jpg"
+                                alt="Certificado de Dispositivos de red y configuración inicial" class="miniatura">
+                            <p>Certificado de Dispositivos de red y configuración inicial</p>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+
+        <!--SECCION  SERVICIOS-->
+        <section id="functions" class="section">
+
+            <div class="organizador-functions">
+                <button class="flecha flecha-izq"><i class="bi bi-arrow-left"></i></button>
+                <div class="contenedor-functions">
+                    <div class="divTextoServicios">
+                        <h2>🌐 Ciberseguridad</h2>
+                        <div>
+                            <h1>Auditorías y Análisis de Vulnerabilidades:</h1>
+                            <p>Identificación de vulnerabilidades para mejorar la protección de datos y redes.</p>
+                        </div>
+                        <div>
+                            <h1>Pruebas de Pentesting:</h1>
+                            <p>Pruebas básicas con Wireshark, Nmap, Metasploit para mejorar la seguridad en redes.</p>
+                        </div>
+                        <div>
+                            <h1>Consultoría en Estándares de Seguridad:</h1>
+                            <p>Asesoría sobre normativas básicas de protección de datos y sistemas.</p>
+                        </div>
+                    </div>
+                
+                    <div class="divTextoServicios">
+                        <h2>📡 Redes y Sistemas Operativos</h2>
+                        <div>
+                            <h1>Seguridad de Redes:</h1>
+                            <p>Identificación de riesgos y medidas para proteger redes.</p>
+                        </div>
+                        <div>
+                            <h1>Configuración y Seguridad de SO:</h1>
+                            <p>Configuración, uso de herramientas y seguridad básica de Linux y Windows.</p>
+                        </div>
+                    </div>
+                
+                    <div class="divTextoServicios">
+                        <h2>💻 Desarrollo y Programación</h2>
+                        <div>
+                            <h1>Desarrollo Backend (Python) y Fronted (HTML, CSS, JavaScript):</h1>
+                            <p>Desarrollo de aplicaciones, scripts, etc.</p>
+                        </div>
+                        <div>
+                            <h1>Gestión de Bases de Datos:</h1>
+                            <p>Apoyo en la gestión básica de bases de datos (SQL Server, MySQL).</p>
+                        </div>
+                    </div>
+                
+                    <div class="divTextoServicios">
+                        <h2>🔧 Herramientas de Productividad</h2>
+                        <div>
+                            <h1>Microsoft Office:</h1>
+                            <p>Uso básico de Word, Excel, PowerPoint, etc.</p>
+                        </div>
+                        <div>
+                            <h1>Inglés:</h1>
+                            <p>Capacitación básica para leer documentación técnica.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="flecha flecha-der"><i class="bi bi-arrow-right"></i></button>
+            
+            </div>                     
+            
+        </section>
+
+        <!--SECCION  PORTAFOLIO-->
+        <section id="portfolio" class="section">
+            <h1>¡PROYECTOS EN PROGRESO! 🚧</h1>
+            <!-- Proyectos -->
+        </section>
+
+       
+
+<!-- SECCIÓN CONTACTO -->
+<section id="contact" class="section">
+    <h2>Contacto</h2>
+
+    <!-- Formulario de contacto -->
+    <form id="contact-form">
+        <!-- Nombre -->
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- Correo Electrónico -->
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required  >
+
+        <!-- Mensaje -->
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <!-- Campo Honeypot (anti-spam) -->
+        <input type="text" name="honeypot" style="display:none" />
+
+        <!-- Google reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6Leq1NcqAAAAAPs6aRRuhH8dovucH5Unn722Nqii"></div>
+
+        <!-- Botón Enviar -->
+        <button type="submit">ENVIAR</button>
+    </form>
+
+    <!-- Mensaje de estado (éxito/error) -->
+    <p id="status-message" style="color: green; font-weight: bold; border: 1px solid white; background-color: white; display: none;">
+        ✅ ¡Mensaje enviado con éxito!
+    </p>
+</section>
+
+
+
+
+
+    <!-- Pie de Página -->
+
+    <footer id="footer1">
+        <div class="footer-container">
+            <!-- Sección izquierda con logo -->
+            <div class="footer-left">
+                <img src="/imagenes/Marca_ ILenTech.jpeg" alt="ILenTech Logo">
+
+            </div>
+
+            <!-- Sección central con descripción personsal -->
+            <div class="footer-center">
+
+                <p>
+                    Aquí, cada línea de código representa una nueva oportunidad para innovar
+                    y cada
+                    desafío en ciberseguridad es una misión que estoy listo para asumir.
+
+                </p>
+            </div>
+
+            <!-- Sección derecha con redes sociales y CV -->
+            <div class="footer-right">
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/dany-lenin-boza-lara-69a798313" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dany20bl69@gmail.com&su=Consulta&body=Hola%20Dany,%20tengo%20una%20pregunta%20sobre" target="_blank" title="Gmail" aria-label="Gmail">
+                        <i class="bi bi-envelope-open"></i>
+
+                    </a>
+                   <!-- <a href="https://github.com/LeninBL/ILenTech" target="_blank" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>-->
+                    
+                    <a href="/condiciones-privacidad/CV.pdf" target="_blank" class="cv-link" title="Currículum Vitae" aria-label="Currículum Vitae" >
+                        <i class="bi bi-file-earmark-person"></i>CV
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 - ILenTech (LBL) | <a href="/condiciones-privacidad/politica.html" target="_blank">Términos, Condiciones y Privacidad</a></p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
