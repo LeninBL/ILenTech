@@ -1,4 +1,3 @@
-
 /*------------------------Reseteo general------------------------------ */
 *,
 *::before,
@@ -17,14 +16,14 @@ html {
     /* Color del texto principal */
     background-image: url('imagenes/computador.gif');
     background-position: center top;
-    background-repeat: repeat; 
+    background-repeat: repeat;
     line-height: 1.6;
     /* Mejora la legibilidad con espacio entre líneas */
     height: 100%;
     /* Asegura que la página tenga altura completa */
     margin: 0;
     display: flex;
-    
+
     flex-direction: column;
 }
 
@@ -62,9 +61,12 @@ main {
 /*--------------------------------------------- Estilo del encabezado ----------------------------------------------*/
 header {
     background-image: url('imagenes/fondo.jpg');
-    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;
+    /* Esto hace que la imagen cubra todo el fondo */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
 
     display: flex;
     align-items: center;
@@ -83,6 +85,7 @@ nav {
     display: flex;
     align-items: center;
 }
+
 /* Estilo para los enlaces activos */
 
 .nav-list {
@@ -96,21 +99,26 @@ nav {
 .nav-list li a {
     text-decoration: none;
     font-weight: bold;
-    padding: 0rem 0rem; /* Agregar algo de espacio en los lados */
+    padding: 0rem 0rem;
+    /* Agregar algo de espacio en los lados */
     font-size: 1.2rem;
     font-family: 'Source Code Pro', 'Courier New', monospace;
-    color: rgb(255, 140, 0); /* Un color por defecto */
-    transition: color 0.3s ease, transform 0.3s ease; 
+    color: rgb(255, 140, 0);
+    /* Un color por defecto */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-list li a:hover {
     color: white;
-    transform: scale(1.1); /* Ligera ampliación para darle un efecto dinámico */
+    transform: scale(1.1);
+    /* Ligera ampliación para darle un efecto dinámico */
 }
+
 .nav-list li a.active {
     color: #fff;
-    transform: scale(1.1); /* También se puede ampliar en el estado activo */
-    
+    transform: scale(1.1);
+    /* También se puede ampliar en el estado activo */
+
 }
 
 
@@ -123,10 +131,11 @@ nav {
     border: none;
     cursor: pointer;
 }
+
 .abrir-menu:hover,
-.cerrar-menu:hover{
+.cerrar-menu:hover {
     color: rgb(255, 140, 0);
-    
+
 }
 
 /* Para pantallas grandes*/
@@ -153,7 +162,7 @@ nav {
 @media screen and (max-width: 1069px) {
     .nav-list {
         display: flex;
-        justify-content:flex-start;
+        justify-content: flex-start;
         gap: 1rem;
         flex-direction: column;
         position: fixed;
@@ -196,7 +205,7 @@ nav {
     .nav-list li a {
         font-size: 0.9rem;
         margin-left: 9px;
-        
+
     }
 }
 
@@ -204,33 +213,45 @@ nav {
 /* Estilo del logo */
 @keyframes cambioColor {
     0% {
-        color: rgb(204, 85, 0); /* Anaranjado oscuro */
-        text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4); /* Brillo suave */
+        color: rgb(204, 85, 0);
+        /* Anaranjado oscuro */
+        text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4);
+        /* Brillo suave */
     }
 
     20% {
-        color: rgb(255, 110, 0); /* Naranja intermedio */
-        text-shadow: 0 0 8px rgba(255, 110, 0, 0.7), 0 0 15px rgba(255, 110, 0, 0.4); /* Brillo medio */
+        color: rgb(255, 110, 0);
+        /* Naranja intermedio */
+        text-shadow: 0 0 8px rgba(255, 110, 0, 0.7), 0 0 15px rgba(255, 110, 0, 0.4);
+        /* Brillo medio */
     }
 
     40% {
-        color: rgb(255, 140, 0); /* Anaranjado cálido */
-        text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5); /* Brillo fuerte */
+        color: rgb(255, 140, 0);
+        /* Anaranjado cálido */
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5);
+        /* Brillo fuerte */
     }
 
     60% {
-        color: rgb(255, 170, 0); /* Un anaranjado dorado */
-        text-shadow: 0 0 12px rgba(255, 170, 0, 0.8), 0 0 25px rgba(255, 170, 0, 0.6); /* Brillo dorado más intenso */
+        color: rgb(255, 170, 0);
+        /* Un anaranjado dorado */
+        text-shadow: 0 0 12px rgba(255, 170, 0, 0.8), 0 0 25px rgba(255, 170, 0, 0.6);
+        /* Brillo dorado más intenso */
     }
 
     80% {
-        color: rgb(255, 140, 0); /* Vuelve al anaranjado cálido */
-        text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5); /* Brillo fuerte */
+        color: rgb(255, 140, 0);
+        /* Vuelve al anaranjado cálido */
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5);
+        /* Brillo fuerte */
     }
 
     100% {
-        color: rgb(204, 85, 0); /* Anaranjado oscuro */
-        text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4); /* Brillo suave */
+        color: rgb(204, 85, 0);
+        /* Anaranjado oscuro */
+        text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4);
+        /* Brillo suave */
     }
 
 }
@@ -249,12 +270,11 @@ nav {
 
 /*----------------------------------- Sección Inicio --------------------------------------------------*/
 #home {
-
-
     min-height: 100vh;
     text-align: center;
     padding: 50px;
 }
+
 #home h1 {
     margin-bottom: 20px;
     letter-spacing: 2px;
@@ -263,18 +283,22 @@ nav {
     color: #ffffff;
     font-family: 'Source Code Pro', 'Courier New', monospace;
     background: rgba(0, 0, 0, 0.322);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Sombra sutil */
 
 }
+
 .enlace {
     color: #00f7ff;
     text-decoration: none;
     font-weight: bold;
 }
+
 .enlace:hover {
     text-decoration: underline;
     color: #2980b9;
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -286,7 +310,8 @@ nav {
 
 .content {
     position: relative;
-    flex: 1 1 30%; /* 3 columnas */
+    flex: 1 1 30%;
+    /* 3 columnas */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -303,7 +328,7 @@ nav {
     position: absolute;
     left: 10px;
     top: 10px;
-    background: #ff6600; 
+    background: #ff6600;
     color: #fff;
     font-weight: bold;
     padding: 5px 10px;
@@ -331,10 +356,12 @@ nav {
     from {
         transform: scale(1);
     }
+
     to {
         transform: scale(1.2);
     }
 }
+
 /* Responsive: 3 filas en pantallas pequeñas */
 @media (max-width: 890px) {
     .container {
@@ -355,7 +382,7 @@ nav {
 
 
 /*------------------------BOTONES home------------------------------*/
-#home button{
+#home button {
 
     padding: 15px 30px;
     border-radius: 12px;
@@ -364,17 +391,18 @@ nav {
 
     color: #ffffff;
 
- 
+
     cursor: pointer;
- 
+
     margin-top: 30px;
 
     font-size: 18px;
- 
+
     text-transform: uppercase;
 
 
 }
+
 #home button:hover {
     transform: translateY(-2px);
 }
@@ -389,7 +417,7 @@ nav {
 
 #about {
     padding: 20px;
-    min-height: 100vh;   
+    min-height: 100vh;
 }
 
 
@@ -402,14 +430,17 @@ nav {
     margin-right: auto;
     display: flex;
     gap: 20px;
-    flex-direction: row; /* Cambia de columna a fila */
+    flex-direction: row;
+    /* Cambia de columna a fila */
     align-items: stretch;
 }
 
 /* Secciones */
 .about-content-seccion {
-    flex: 1; /* Hace que ambas secciones ocupen el mismo espacio */
-    min-width: 45%; /* Evita que se achiquen demasiado */
+    flex: 1;
+    /* Hace que ambas secciones ocupen el mismo espacio */
+    min-width: 45%;
+    /* Evita que se achiquen demasiado */
 
     padding: 20px;
     background: rgb(0 0 0 / 81%);
@@ -427,11 +458,11 @@ details {
     background: #1f202277;
     cursor: pointer;
     color: #ffffff;
-   
+
 }
 
 details[open] {
-    background:  #1f202277;
+    background: #1f202277;
     color: #ffffff;
 
 }
@@ -463,7 +494,7 @@ details[open] summary i {
     border-radius: 10px;
     text-align: center;
 
-    
+
 }
 
 /* Contenedor de iconos */
@@ -499,12 +530,13 @@ details[open] summary i {
 
 
 
-.certificados{
+.certificados {
     margin-top: 35px;
 
 
 }
-.certificados h2{
+
+.certificados h2 {
     color: white;
     text-align: center;
     background: #1f202277;
@@ -521,7 +553,7 @@ details[open] summary i {
     border-radius: 3px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation:cambiocertificadocolor  6s infinite ease-out;
+    animation: cambiocertificadocolor 6s infinite ease-out;
 }
 
 .certificado:hover {
@@ -546,7 +578,8 @@ details[open] summary i {
 
 /* Modal para ampliar imágenes */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -581,12 +614,15 @@ details[open] summary i {
 
 @media (max-width: 768px) {
     .about-content {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        gap: 10px; /* Reduce el espacio entre secciones */
+        flex-direction: column;
+        /* Cambia a columna en pantallas pequeñas */
+        gap: 10px;
+        /* Reduce el espacio entre secciones */
     }
 
     .about-content-seccion {
-        min-width: 100%; /* Ocupar todo el ancho disponible */
+        min-width: 100%;
+        /* Ocupar todo el ancho disponible */
     }
 }
 
@@ -597,66 +633,90 @@ details[open] summary i {
 
 @keyframes cambioColorBordeDiamante {
     0% {
-        border-color: rgb(138, 43, 226); /* Morado oscuro */
-        box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4); /* Brillo suave */
+        border-color: rgb(138, 43, 226);
+        /* Morado oscuro */
+        box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4);
+        /* Brillo suave */
     }
-    
+
     20% {
-        border-color: rgb(186, 85, 211); /* Morado intermedio */
-        box-shadow: 0 0 8px rgba(186, 85, 211, 0.7), 0 0 15px rgba(186, 85, 211, 0.4); /* Brillo medio */
+        border-color: rgb(186, 85, 211);
+        /* Morado intermedio */
+        box-shadow: 0 0 8px rgba(186, 85, 211, 0.7), 0 0 15px rgba(186, 85, 211, 0.4);
+        /* Brillo medio */
     }
-    
+
     40% {
-        border-color: rgb(221, 160, 221); /* Morado claro */
-        box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5); /* Brillo fuerte */
+        border-color: rgb(221, 160, 221);
+        /* Morado claro */
+        box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5);
+        /* Brillo fuerte */
     }
-    
+
     60% {
-        border-color: rgb(255, 0, 255); /* Morado brillante */
-        box-shadow: 0 0 12px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.6); /* Brillo intenso */
+        border-color: rgb(255, 0, 255);
+        /* Morado brillante */
+        box-shadow: 0 0 12px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.6);
+        /* Brillo intenso */
     }
-    
+
     80% {
-        border-color: rgb(221, 160, 221); /* Vuelve al morado claro */
-        box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5); /* Brillo fuerte */
+        border-color: rgb(221, 160, 221);
+        /* Vuelve al morado claro */
+        box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5);
+        /* Brillo fuerte */
     }
-    
+
     100% {
-        border-color: rgb(138, 43, 226); /* Morado oscuro */
-        box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4); /* Brillo suave */
+        border-color: rgb(138, 43, 226);
+        /* Morado oscuro */
+        box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4);
+        /* Brillo suave */
     }
-    
+
 }
 
-@keyframes cambiocertificadocolor{
+@keyframes cambiocertificadocolor {
     0% {
-        border-color: rgb(0, 85, 204); /* Azul oscuro */
-        box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4); /* Brillo suave */
+        border-color: rgb(0, 85, 204);
+        /* Azul oscuro */
+        box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4);
+        /* Brillo suave */
     }
 
     20% {
-        border-color: rgb(0, 110, 255); /* Azul intermedio */
-        box-shadow: 0 0 8px rgba(0, 110, 255, 0.7), 0 0 15px rgba(0, 110, 255, 0.4); /* Brillo medio */
+        border-color: rgb(0, 110, 255);
+        /* Azul intermedio */
+        box-shadow: 0 0 8px rgba(0, 110, 255, 0.7), 0 0 15px rgba(0, 110, 255, 0.4);
+        /* Brillo medio */
     }
 
     40% {
-        border-color: rgb(0, 140, 255); /* Azul claro */
-        box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5); /* Brillo fuerte */
+        border-color: rgb(0, 140, 255);
+        /* Azul claro */
+        box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5);
+        /* Brillo fuerte */
     }
 
     60% {
-        border-color: rgb(0, 170, 255); /* Azul brillante */
-        box-shadow: 0 0 12px rgba(0, 170, 255, 0.8), 0 0 25px rgba(0, 170, 255, 0.6); /* Brillo intenso */
+        border-color: rgb(0, 170, 255);
+        /* Azul brillante */
+        box-shadow: 0 0 12px rgba(0, 170, 255, 0.8), 0 0 25px rgba(0, 170, 255, 0.6);
+        /* Brillo intenso */
     }
 
     80% {
-        border-color: rgb(0, 140, 255); /* Vuelve al azul claro */
-        box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5); /* Brillo fuerte */
+        border-color: rgb(0, 140, 255);
+        /* Vuelve al azul claro */
+        box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5);
+        /* Brillo fuerte */
     }
 
     100% {
-        border-color: rgb(0, 85, 204); /* Azul oscuro */
-        box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4); /* Brillo suave */
+        border-color: rgb(0, 85, 204);
+        /* Azul oscuro */
+        box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4);
+        /* Brillo suave */
     }
 }
 
@@ -687,11 +747,10 @@ details[open] summary i {
 
 #functions {
 
-    display: none;
     justify-content: center;
     align-items: center;
     color: #fff;
-    padding:20px 0;
+    padding: 20px 0;
     min-height: 53vh;
 
 }
@@ -718,12 +777,13 @@ details[open] summary i {
     box-shadow: 0 4px 8px rgba(170, 166, 166, 0.021);
     animation: cambioColorBordeDiamante 4s infinite ease-in-out;
     position: relative;
-    min-height: 300px; /* Altura mínima para evitar saltos */
+    min-height: 300px;
+    /* Altura mínima para evitar saltos */
 }
 
 /* Flechas de navegación */
 .flecha {
-    background:none;
+    background: none;
     border: none;
     font-size: 4rem;
     cursor: pointer;
@@ -731,7 +791,8 @@ details[open] summary i {
     padding: 10px;
 
 }
-.flecha i{
+
+.flecha i {
     background: rgba(0, 0, 0, 0.897);
     color: #fff;
     border: 2px solid rgb(255, 255, 255);
@@ -743,11 +804,12 @@ details[open] summary i {
 }
 
 /* Contenido de los textos */
-.divTextoServicios{
+.divTextoServicios {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
-    position: absolute; /* Mantenemos el posicionamiento absoluto */
+    position: absolute;
+    /* Mantenemos el posicionamiento absoluto */
     top: 20px;
     left: 20px;
     right: 20px;
@@ -758,7 +820,8 @@ details[open] summary i {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease-in-out;
-    position: static; /* Cambiamos a posición estática cuando está activo */
+    position: static;
+    /* Cambiamos a posición estática cuando está activo */
 }
 
 /* Estilos para el texto dentro de los divs */
@@ -811,19 +874,20 @@ details[open] summary i {
 
 /* ----------------------------------------Sección Portafolio - Texto centrado */
 #portfolio {
-    display: none;
+
     min-height: 63vh;
     background-image: url('imagenes/construccion2.gif');
     background-position: center top;
     background-size: cover;
-    background-repeat: repeat; 
+    background-repeat: repeat;
 
 
 }
-#portfolio h1{
+
+#portfolio h1 {
     text-align: center;
     margin: auto;
-    color:black;
+    color: black;
     width: 100%;
     border: #000000;
     background-color: yellow;
@@ -836,12 +900,12 @@ details[open] summary i {
 
 /* -----------------------------------------------------------------------------------Estilos generales para la sección de contacto ---------------------------------*/
 #contact {
-    display: none;
+
     padding: 4rem 2rem;
     min-height: 100vh;
     background-image: url('imagenes/computador2.gif');
     background-position: center top;
-    background-repeat: repeat; 
+    background-repeat: repeat;
     color: #e0e0e0;
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -973,9 +1037,12 @@ details[open] summary i {
 
 footer {
     background-image: url('imagenes/fondo.jpg');
-    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;
+    /* Esto hace que la imagen cubra todo el fondo */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
     color: #ffffff;
     padding: 7px 3px;
     text-align: center;
@@ -989,16 +1056,21 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     max-width: 1200px;
-    margin:11px auto;
+    margin: 11px auto;
     padding: 0 15px;
     flex-wrap: wrap;
     gap: 20px;
 
 }
-.footer-left, .footer-center, .footer-right {
-    flex: 1 1 30%; /* Distribución flexible de los elementos */
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1 1 30%;
+    /* Distribución flexible de los elementos */
     text-align: center;
-    max-width: 380px; /* Añadimos un max-width para evitar que los elementos crezcan demasiado */
+    max-width: 380px;
+    /* Añadimos un max-width para evitar que los elementos crezcan demasiado */
 }
 
 .footer-left img {
@@ -1008,9 +1080,9 @@ footer {
 }
 
 
-.social-links{
+.social-links {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .social-links a {
@@ -1023,7 +1095,7 @@ footer {
     letter-spacing: 5px;
     animation: cambioColor 10s infinite linear;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   
+
 }
 
 .footer-bottom {
@@ -1050,11 +1122,15 @@ footer {
     .footer-container {
         flex-direction: column;
         text-align: center;
-        gap: 15px; /* Menos espacio entre las secciones en pantallas pequeñas */
+        gap: 15px;
+        /* Menos espacio entre las secciones en pantallas pequeñas */
     }
 
-    .footer-left, .footer-center, .footer-right {
-        max-width: 100%; /* Se asegura que cada sección ocupe todo el ancho disponible */
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        max-width: 100%;
+        /* Se asegura que cada sección ocupe todo el ancho disponible */
         flex: 1 1 100%;
     }
 }

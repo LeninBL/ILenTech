@@ -1,0 +1,9 @@
+# Ignorar el entorno virtual
+venv/
+
+# Ignorar archivos de configuración de IDE 
+.vscode/
+.idea/
+
+# Ignorar otros archivos específicos del entorno
+.env
