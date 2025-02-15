@@ -167,13 +167,19 @@ document.getElementById("contact-form")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Evita el envío estándar
 
-    const form = this; // Formulario
-    const inputs = form.querySelectorAll("input, textarea, button"); // Campos del formulario
-    const emailField = document.getElementById("email"); // Campo de correo electrónico
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Validación de correo
-    const statusMessage = document.getElementById("status-message"); // Mensaje de éxito
-
-    // Validar el correo
+    const form = this;
+    const inputs = form.querySelectorAll("input, textarea, button");
+    const emailField = document.getElementById("email");
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const statusMessage = document.getElementById("status-message");
+    const honeypotField = document.querySelector("input[name='honeypot']");
+    
+    // Validación de honeypot
+    if (honeypotField.value) {
+      alert("Formulario rechazado debido a un bot detectado.");
+      return;
+  }
+    // Validación de correo
     if (!emailPattern.test(emailField.value)) {
       alert("Por favor, ingrese un correo válido.");
       return;
@@ -189,7 +195,7 @@ document.getElementById("contact-form")
     // Deshabilitar los campos mientras se envía el formulario
     inputs.forEach((input) => (input.disabled = true));
 
-    // Enviar el formulario con fetch
+    // Enviar formulario con fetch a FastAPI
     fetch(form.action, {
       method: "POST",
       body: new FormData(form),
@@ -216,3 +222,4 @@ document.getElementById("contact-form")
         inputs.forEach((input) => (input.disabled = false));
       });
   });
+

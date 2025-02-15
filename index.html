@@ -324,7 +324,7 @@
 <section id="contact" class="section">
     <h2>Contacto</h2>
 
-    <form id="contact-form" action="https://formsubmit.co/dany20bl69@gmail.com" method="POST">
+    <form id="contact-form" action="/api/contact" method="POST">
         <!-- Nombre -->
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" required>
@@ -338,6 +338,10 @@
         <label for="message">Mensaje:</label>
         <textarea id="message" name="message" required></textarea>
 
+        <!-- Campo Honeypot -->
+        <input type="text" name="honeypot" style="display:none" />
+
+
         <!-- Google reCAPTCHA -->
         <div class="g-recaptcha" data-sitekey="6Leq1NcqAAAAAPs6aRRuhH8dovucH5Unn722Nqii"></div>
 
@@ -349,6 +353,7 @@
         ✅ ¡Mensaje enviado con éxito!
     </p>
 </section>
+
 
 
 
