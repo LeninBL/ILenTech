@@ -512,7 +512,35 @@ details[open] summary i {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Efecto hover en iconos */
+/* Contenedor de cada icono */
+.icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Ocultar el texto por defecto */
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar el texto cuando el mouse está encima */
+.icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 .Tics img:hover {
     transform: scale(1.2);
     filter: brightness(1.2);
@@ -796,12 +824,10 @@ details[open] summary i {
     background: rgba(0, 0, 0, 0.897);
     color: #fff;
     border: 2px solid rgb(255, 255, 255);
-    animation: cambioColor 1s infinite linear;
+    border-radius: 10px;
+
 }
 
-.flecha:hover {
-    color: #d400d4;
-}
 
 /* Contenido de los textos */
 .divTextoServicios {
