@@ -189,12 +189,10 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
   // Enviar el formulario con FormSubmit
   fetch("https://formsubmit.co/ajax/dany20bl69@gmail.com", {
-      method: "POST",
-      body: new FormData(form),
-      headers: {
-          "Content-Type": "application/x-www-form-urlencoded", // Eliminar "Recaptcha-Response"
-      },
-  })
+    method: "POST",
+    body: new FormData(form), // FormData maneja la codificación
+})
+
       .then((response) => {
           if (response.ok) {
               return response.json();
