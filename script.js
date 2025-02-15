@@ -189,7 +189,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   inputs.forEach((input) => (input.disabled = true));
 
   // Enviar formulario con fetch a FastAPI
-  fetch("/contact", {
+  fetch("https://i-len-tech.vercel.app/contact", {
       method: "POST",
       body: new FormData(form),
       headers: {
