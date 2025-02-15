@@ -16,8 +16,10 @@ async def contact(
     recaptcha_response: str = Form(...),
     honeypot: str = Form("")  # El campo honeypot que esperamos vacío
 ):
+    # Verificar honeypot
     if honeypot:
         raise HTTPException(status_code=400, detail="Formulario rechazado debido a un bot detectado.")
+
     # Verificar reCAPTCHA
     async with httpx.AsyncClient() as client:
         recaptcha_url = "https://www.google.com/recaptcha/api/siteverify"
@@ -31,8 +33,8 @@ async def contact(
     # Si el reCAPTCHA no es válido, lanzar error
     if not recaptcha_data.get("success"):
         raise HTTPException(status_code=400, detail="reCAPTCHA no válido.")
-    
-  # Si reCAPTCHA es válido, enviar el formulario a Formsubmit
+
+    # Enviar el formulario a Formsubmit
     formsubmit_url = "https://formsubmit.co/dany20bl69@gmail.com"
     form_data = {
         'name': name,
@@ -40,11 +42,10 @@ async def contact(
         'message': message
     }
 
-    # Enviar a Formsubmit
     async with httpx.AsyncClient() as client:
         response = await client.post(formsubmit_url, data=form_data)
 
     if response.status_code == 200:
-        return {"message": "¡Mensaje enviado con éxito!"}
+        return JSONResponse(content={"message": "¡Mensaje enviado con éxito!"}, status_code=200)
     else:
         raise HTTPException(status_code=500, detail="Error al enviar el mensaje.")
