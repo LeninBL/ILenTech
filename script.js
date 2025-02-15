@@ -163,63 +163,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------Contacto-----------------------------------------------------------------
-document.getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita el envío estándar
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita el envío estándar
 
-    const form = this;
-    const inputs = form.querySelectorAll("input, textarea, button");
-    const emailField = document.getElementById("email");
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const statusMessage = document.getElementById("status-message");
-    const honeypotField = document.querySelector("input[name='honeypot']");
-    
-    // Validación de honeypot
-    if (honeypotField.value) {
+  const form = this;
+  const inputs = form.querySelectorAll("input, textarea, button");
+  const emailField = document.getElementById("email");
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const statusMessage = document.getElementById("status-message");
+  const honeypotField = document.querySelector("input[name='honeypot']");
+
+  // Validación de honeypot
+  if (honeypotField.value) {
       alert("Formulario rechazado debido a un bot detectado.");
       return;
   }
-    // Validación de correo
-    if (!emailPattern.test(emailField.value)) {
+
+  // Validación de correo
+  if (!emailPattern.test(emailField.value)) {
       alert("Por favor, ingrese un correo válido.");
       return;
-    }
+  }
 
-    // Verificar reCAPTCHA
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (recaptchaResponse === "") {
+  // Verificar reCAPTCHA
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (recaptchaResponse === "") {
       alert("Por favor, completa el reCAPTCHA.");
       return;
-    }
+  }
 
-    // Deshabilitar los campos mientras se envía el formulario
-    inputs.forEach((input) => (input.disabled = true));
+  // Deshabilitar los campos mientras se envía el formulario
+  inputs.forEach((input) => (input.disabled = true));
 
-    // Enviar formulario con fetch a FastAPI
-    fetch(form.action, {
+  // Enviar formulario con fetch a FastAPI
+  fetch(form.action, {
       method: "POST",
       body: new FormData(form),
       headers: {
-        "Recaptcha-Response": recaptchaResponse, // Incluir la respuesta del reCAPTCHA
-      }
-    })
+          "Recaptcha-Response": recaptchaResponse, // Incluir la respuesta del reCAPTCHA
+      },
+  })
       .then((response) => {
-        if (response.ok) {
+          if (response.ok) {
+              return response.json(); // Parsear la respuesta JSON
+          } else {
+              throw new Error("Error en la respuesta del servidor");
+          }
+      })
+      .then((data) => {
           statusMessage.style.display = "block"; // Mostrar mensaje de éxito
           form.reset(); // Limpiar formulario
 
           // Ocultar el mensaje después de 3 segundos
           setTimeout(() => {
-            statusMessage.style.display = "none";
+              statusMessage.style.display = "none";
           }, 3000);
-        } else {
-          alert("Error al enviar el mensaje. Inténtelo de nuevo.");
-        }
       })
-      .catch((error) => alert("Error de conexión"))
+      .catch((error) => {
+          console.error("Error:", error);
+          alert("Error al enviar el mensaje. Inténtelo de nuevo.");
+      })
       .finally(() => {
-        // Habilitar los campos nuevamente
-        inputs.forEach((input) => (input.disabled = false));
+          // Habilitar los campos nuevamente
+          inputs.forEach((input) => (input.disabled = false));
       });
-  });
+});
 
