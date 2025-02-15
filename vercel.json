@@ -16,6 +16,14 @@
       {
         "src": "style.css",
         "use": "@vercel/static"
+      },
+      {
+        "src": "imagenes/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "condiciones-privacidad/*",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
@@ -30,6 +38,15 @@
       {
         "src": "/style.css",
         "dest": "/style.css"
+      },
+      {
+        "src": "/imagenes/(.*)",
+        "dest": "/imagenes/$1"
+      },
+ 
+      {
+        "src": "/condiciones-privacidad/(.*)",
+        "dest": "/condiciones-privacidad/$1"
       },
       {
         "src": "/(.*)",
