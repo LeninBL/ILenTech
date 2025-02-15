@@ -7,7 +7,7 @@ app = FastAPI()
 # Claves de reCAPTCHA
 RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
 
-@app.post("/api/contact")
+@app.post("/contact")
 async def contact(
     name: str = Form(...),
     email: str = Form(...),
