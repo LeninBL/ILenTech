@@ -323,13 +323,9 @@
 <!-- SECCIÓN CONTACTO -->
 <section id="contact" class="section">
     <h2>Contacto</h2>
-    <p style="color: red; font-weight: bold;">
-        La sección de contacto está en mantenimiento. Pronto estará disponible.
-    </p>
-    <p style="color: red; font-weight: bold;">
-        📢 Para comunicarse, use nuestras redes sociales ubicadas en el pie de página. 📢
-    </p>
-    <form id="contact-form" action="/api/contact" method="POST">
+
+    <!-- Formulario de contacto -->
+    <form id="contact-form">
         <!-- Nombre -->
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" required>
@@ -343,9 +339,8 @@
         <label for="message">Mensaje:</label>
         <textarea id="message" name="message" required></textarea>
 
-        <!-- Campo Honeypot -->
+        <!-- Campo Honeypot (anti-spam) -->
         <input type="text" name="honeypot" style="display:none" />
-
 
         <!-- Google reCAPTCHA -->
         <div class="g-recaptcha" data-sitekey="6Leq1NcqAAAAAPs6aRRuhH8dovucH5Unn722Nqii"></div>
@@ -354,6 +349,7 @@
         <button type="submit">ENVIAR</button>
     </form>
 
+    <!-- Mensaje de estado (éxito/error) -->
     <p id="status-message" style="color: green; font-weight: bold; border: 1px solid white; background-color: white; display: none;">
         ✅ ¡Mensaje enviado con éxito!
     </p>

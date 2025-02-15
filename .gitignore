@@ -7,3 +7,7 @@ venv/
 
 # Ignorar otros archivos específicos del entorno
 .env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

@@ -196,7 +196,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   inputs.forEach((input) => (input.disabled = true));
 
   // Enviar formulario con fetch a FastAPI
-  fetch(form.action, {
+  fetch("/contact", {
       method: "POST",
       body: new FormData(form),
       headers: {
@@ -228,4 +228,3 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
           inputs.forEach((input) => (input.disabled = false));
       });
 });
-
