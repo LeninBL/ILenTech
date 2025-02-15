@@ -187,33 +187,35 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   // Deshabilitar los campos mientras se envía el formulario
   inputs.forEach((input) => (input.disabled = true));
 
-  // Enviar formulario con FormSubmit
-  fetch("https://formsubmit.co/dany20bl69@gmail.com", {
+  // Enviar el formulario con FormSubmit
+  fetch("https://formsubmit.co/ajax/dany20bl69@gmail.com", {
       method: "POST",
       body: new FormData(form),
       headers: {
-          "Recaptcha-Response": recaptchaResponse, // Incluir la respuesta del reCAPTCHA
+          "Content-Type": "application/x-www-form-urlencoded", // Eliminar "Recaptcha-Response"
       },
   })
       .then((response) => {
           if (response.ok) {
-              statusMessage.style.display = "block"; // Mostrar mensaje de éxito
-              form.reset(); // Limpiar formulario
-
-              // Ocultar el mensaje después de 3 segundos
-              setTimeout(() => {
-                  statusMessage.style.display = "none";
-              }, 3000);
+              return response.json();
           } else {
-              throw new Error("Error en el envío del formulario");
+              throw new Error("Error en la respuesta del servidor");
           }
+      })
+      .then((data) => {
+          statusMessage.style.display = "block"; // Mostrar mensaje de éxito
+          form.reset(); // Limpiar formulario
+
+          // Ocultar el mensaje después de 3 segundos
+          setTimeout(() => {
+              statusMessage.style.display = "none";
+          }, 3000);
       })
       .catch((error) => {
           console.error("Error:", error);
           alert("Error al enviar el mensaje. Inténtelo de nuevo.");
       })
       .finally(() => {
-          // Habilitar los campos nuevamente
-          inputs.forEach((input) => (input.disabled = false));
+          inputs.forEach((input) => (input.disabled = false)); // Habilitar los campos
       });
 });
