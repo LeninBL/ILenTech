@@ -177,7 +177,6 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
       return;
   }
 
-
   // Verificar reCAPTCHA
   const recaptchaResponse = grecaptcha.getResponse();
   if (recaptchaResponse === "") {
@@ -188,8 +187,8 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   // Deshabilitar los campos mientras se envía el formulario
   inputs.forEach((input) => (input.disabled = true));
 
-  // Enviar formulario con fetch a FastAPI
-  fetch("https://i-len-tech.vercel.app/contact", {
+  // Enviar formulario con FormSubmit
+  fetch("https://formsubmit.co/dany20bl69@gmail.com", {
       method: "POST",
       body: new FormData(form),
       headers: {
@@ -198,19 +197,16 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   })
       .then((response) => {
           if (response.ok) {
-              return response.json(); // Parsear la respuesta JSON
-          } else {
-              throw new Error("Error en la respuesta del servidor");
-          }
-      })
-      .then((data) => {
-          statusMessage.style.display = "block"; // Mostrar mensaje de éxito
-          form.reset(); // Limpiar formulario
+              statusMessage.style.display = "block"; // Mostrar mensaje de éxito
+              form.reset(); // Limpiar formulario
 
-          // Ocultar el mensaje después de 3 segundos
-          setTimeout(() => {
-              statusMessage.style.display = "none";
-          }, 3000);
+              // Ocultar el mensaje después de 3 segundos
+              setTimeout(() => {
+                  statusMessage.style.display = "none";
+              }, 3000);
+          } else {
+              throw new Error("Error en el envío del formulario");
+          }
       })
       .catch((error) => {
           console.error("Error:", error);
