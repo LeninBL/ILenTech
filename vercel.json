@@ -10,11 +10,11 @@
         "use": "@vercel/static"
       },
       {
-        "src": "script.js",
+        "src": "style.css",
         "use": "@vercel/static"
       },
       {
-        "src": "style.css",
+        "src": "script.js",
         "use": "@vercel/static"
       }
     ],
@@ -29,4 +29,5 @@
       }
     ]
   }
+  
   
