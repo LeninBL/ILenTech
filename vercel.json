@@ -24,6 +24,14 @@
         "dest": "/main.py"
       },
       {
+        "src": "/script.js",
+        "dest": "/script.js"
+      },
+      {
+        "src": "/style.css",
+        "dest": "/style.css"
+      },
+      {
         "src": "/(.*)",
         "dest": "/index.html"
       }
