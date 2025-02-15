@@ -28,3 +28,4 @@ async def contact(
         raise HTTPException(status_code=400, detail="reCAPTCHA no válido.")
     
     return {"message": "¡Mensaje enviado con éxito!"}
+
