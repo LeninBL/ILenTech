@@ -47,13 +47,21 @@ window.addEventListener("resize", () => {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function presentarSeccion(sectionId) {
+  
   // esta funcion sirve para mostrar la seccion seleccionada, es decir, la que se le pase como parametro en la funcion el id de la seccion
   // Ocultar todas las secciones
   const sections = document.querySelectorAll(".section"); // Seleccionamos todas las secciones
-  sections.forEach((section) => (section.style.display = "none")); // Recorremos todas las secciones y las ocultamos, el display none sirve para ocultar la seccion
+  sections.forEach((section) => {
+    section.classList.remove("visible");  // Eliminar la clase 'visible' de todas las secciones
+    section.style.display = "none";
+  });
 
   // Mostrar la sección seleccionada
-  document.getElementById(sectionId).style.display = "block"; // Despues de ocultar todas las secciones, mostramos la seccion seleccionada con el id en el header
+  const selectedSection = document.getElementById(sectionId);
+  if (selectedSection) {
+    selectedSection.classList.add("visible");  // Añadir la clase 'visible' para mostrarla con transición
+    selectedSection.style.display = "block"; 
+  }
 
   // Eliminar la clase 'active' de todos los enlaces
   const enlaces = document.querySelectorAll(".header__nav-link");
@@ -67,7 +75,7 @@ function presentarSeccion(sectionId) {
   }
 
     // Actualizar el hash de la URL para reflejar la sección mostrada
-    window.location.hash = `#${seccion}`;
+    window.location.hash = `#${sectionId}`;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -96,13 +104,17 @@ modal.appendChild(closeBtn); // Agregar el botón al modal
 miniaturas.forEach((img) => {
   img.addEventListener("click", () => {
     // Cuando se hace clic en cada imagen miniatura se abre el modal en pantalla completa
-    modal.style.display = "flex";
+    modal.style.display="flex"
+    modal.style.visibility = 'visible'; // Hacer visible el modal si es necesario
+    modal.style.opacity = 1;  // Hacerlo visible
     modalImg.src = img.src; // EL src CONTIENE LA RUTA DE LA IMAGEN, por lo que se le asigna la ruta de la imagen seleccionada al modal para mostrar en tamaño pantalla completa
   });
 });
 
 // Cerrar modal al hacer clic en el botón
 closeBtn.addEventListener("click", () => {
+  modal.style.visibility = 'hidden';
+  modal.style.opacity = 0;  
   modal.style.display = "none";
 });
 
@@ -110,6 +122,8 @@ closeBtn.addEventListener("click", () => {
 modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     // Si el objetivo del evento es el modal, se cierra el modal
+    modal.style.visibility = 'hidden';
+    modal.style.opacity = 0;  
     modal.style.display = "none";
   }
 });
@@ -119,7 +133,9 @@ modal.addEventListener("click", (e) => {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
    // Asegurar que el modal esté oculto al cargar la página
-  modal.style.display = "none";
+   modal.style.visibility = 'hidden';
+   modal.style.opacity = 0;  
+   modal.style.display = "none";
   // Eliminar la clase 'active' de todos los enlaces al cargar la página
   const enlaces = document.querySelectorAll(".header__nav-link");
   enlaces.forEach((enlace) => enlace.classList.remove("active"));

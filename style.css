@@ -43,7 +43,17 @@ main {
     scroll-margin-top: 80px;
     padding: 40px 10px;
     margin-top: -8px; /* Espacio alrededor del contenido de cada sección */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
 }
+
+  
+.section.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
 
 /*--------------------------------------------- Estilo del encabezado ----------------------------------------------*/
 .header {
@@ -261,7 +271,6 @@ main {
 .home__content {
     position: relative;
     flex: 1 1 30%;
-    /* 3 columnas */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -509,7 +518,6 @@ main {
 /* Modal para ampliar imágenes */
 .modal {
     display: none;
-    /* Oculto por defecto */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -520,7 +528,15 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
 }
+
+.modal.visible {
+    visibility: visible;
+    opacity: 1;
+  }
 
 /* Imagen grande dentro del modal */
 .modal img {
