@@ -11,19 +11,14 @@
 /*---------------------------------------- Estilos generales del cuerpo ----------------------------*/
 body,
 html {
-    /* Tamaño base para escalabilidad */
     color: #000000;
-    /* Color del texto principal */
     background-image: url('imagenes/computador.gif');
     background-position: center top;
     background-repeat: repeat;
     line-height: 1.6;
-    /* Mejora la legibilidad con espacio entre líneas */
     height: 100%;
-    /* Asegura que la página tenga altura completa */
     margin: 0;
     display: flex;
-
     flex-direction: column;
 }
 
@@ -35,39 +30,27 @@ html {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Color oscuro con transparencia */
     z-index: 999;
-    /* Asegúrate de que el overlay esté detrás del menú */
 }
 
-/* Estilo del contenido principal */
 main {
     flex: 1;
-    /* Hace que el contenido principal ocupe el espacio restante */
-    padding-top: calc(4em + 8px);
-    /* Ajusta dinámicamente según la altura del encabezado */
+    padding-top: calc(4em + 8px);    /* Ajusta dinámicamente según la altura del encabezado */
     width: 100%;
 }
 
-/* Secciones principales */
 .section {
     scroll-margin-top: 80px;
     padding: 40px 10px;
-    margin-top: -8px;
-    /* Espacio alrededor del contenido de cada sección */
+    margin-top: -8px; /* Espacio alrededor del contenido de cada sección */
 }
 
-
 /*--------------------------------------------- Estilo del encabezado ----------------------------------------------*/
-header {
+.header {
     background-image: url('imagenes/fondo.jpg');
     background-size: cover;
-    /* Esto hace que la imagen cubra todo el fondo */
     background-position: center;
-    /* Centra la imagen */
     background-repeat: no-repeat;
-    /* Evita que la imagen se repita */
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -81,49 +64,40 @@ header {
     font-family: 'Source Code Pro', 'Courier New', monospace;
 }
 
-nav {
+.header__nav {
     display: flex;
     align-items: center;
 }
 
-/* Estilo para los enlaces activos */
-
-.nav-list {
+.header__nav-list {
     display: flex;
     justify-content: space-between;
     gap: 3rem;
     list-style: none;
 }
 
-
-.nav-list li a {
+.header__nav-link {
     text-decoration: none;
     font-weight: bold;
     padding: 0rem 0rem;
-    /* Agregar algo de espacio en los lados */
     font-size: 1.2rem;
     font-family: 'Source Code Pro', 'Courier New', monospace;
     color: rgb(255, 140, 0);
-    /* Un color por defecto */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-list li a:hover {
+.header__nav-link:hover {
     color: white;
     transform: scale(1.1);
-    /* Ligera ampliación para darle un efecto dinámico */
 }
 
-.nav-list li a.active {
+.header__nav-link.active {
     color: #fff;
     transform: scale(1.1);
-    /* También se puede ampliar en el estado activo */
-
 }
 
-
-.abrir-menu,
-.cerrar-menu {
+.header__menu-button--open,
+.header__menu-button--close {
     display: none;
     font-size: 1.5rem;
     color: #ffffff;
@@ -132,35 +106,27 @@ nav {
     cursor: pointer;
 }
 
-.abrir-menu:hover,
-.cerrar-menu:hover {
+.header__menu-button--open:hover,
+.header__menu-button--close:hover {
     color: rgb(255, 140, 0);
 
 }
 
-/* Para pantallas grandes*/
-
 @media screen and (min-width: 1024px) {
-    header {
+    .header {
         padding: 1rem 2rem;
     }
-
-    .nav-list {
+    .header__nav-list {
         display: flex;
     }
-
-    .abrir-menu {
-        display: none;
-    }
-
-    .cerrar-menu {
-        display: none;
+    .header__menu-button--open,
+    .header__menu-button--close {
+    display: none;
     }
 }
 
-/* Para móviles (pantallas menores a 1069px) */
 @media screen and (max-width: 1069px) {
-    .nav-list {
+    .header__nav-list {
         display: flex;
         justify-content: flex-start;
         gap: 1rem;
@@ -177,11 +143,11 @@ nav {
 
     }
 
-    .nav-list.visible {
+    .header__nav-list.visible {
         transform: translateX(0);
     }
 
-    .abrir-menu {
+    .header__menu-button--open {
         display: block;
         align-self: flex-end;
         position: absolute;
@@ -191,91 +157,77 @@ nav {
         padding: 15px 30px;
     }
 
-    .cerrar-menu {
+    .header__menu-button--close {
         display: block;
         align-self: flex-end;
         margin-bottom: 1rem;
         padding: 15px 30px;
     }
 
-    header {
+    .header {
         padding: 1rem 1.1rem;
     }
 
-    .nav-list li a {
+    .header__nav-link {
         font-size: 0.9rem;
         margin-left: 9px;
 
     }
 }
 
-
-/* Estilo del logo */
 @keyframes cambioColor {
     0% {
         color: rgb(204, 85, 0);
-        /* Anaranjado oscuro */
         text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4);
-        /* Brillo suave */
+
     }
 
     20% {
         color: rgb(255, 110, 0);
-        /* Naranja intermedio */
         text-shadow: 0 0 8px rgba(255, 110, 0, 0.7), 0 0 15px rgba(255, 110, 0, 0.4);
-        /* Brillo medio */
+
     }
 
     40% {
         color: rgb(255, 140, 0);
-        /* Anaranjado cálido */
         text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5);
-        /* Brillo fuerte */
     }
 
     60% {
         color: rgb(255, 170, 0);
-        /* Un anaranjado dorado */
         text-shadow: 0 0 12px rgba(255, 170, 0, 0.8), 0 0 25px rgba(255, 170, 0, 0.6);
-        /* Brillo dorado más intenso */
     }
 
     80% {
         color: rgb(255, 140, 0);
-        /* Vuelve al anaranjado cálido */
         text-shadow: 0 0 10px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.5);
-        /* Brillo fuerte */
     }
 
     100% {
         color: rgb(204, 85, 0);
-        /* Anaranjado oscuro */
         text-shadow: 0 0 5px rgba(204, 85, 0, 0.6), 0 0 10px rgba(204, 85, 0, 0.4);
-        /* Brillo suave */
     }
 
 }
 
-.logo {
+.header__logo {
     letter-spacing: 10px;
     font-size: 20px;
     font-family: 'Orbitron';
     font-weight: bold;
     display: inline-block;
     animation: cambioColor 10s infinite linear;
-    /* Animación continua */
     text-shadow: 0 0 5px rgba(255, 223, 79, 0.8);
-    /* Sombra inicial dorada */
 }
 
 /*----------------------------------- Sección Inicio --------------------------------------------------*/
-#home {
+.section--home {
     min-height: 100vh;
     text-align: center;
     padding: 50px;
 }
 
-#home h1 {
+.section--home h1 {
     margin-bottom: 20px;
     letter-spacing: 2px;
     font-weight: bold;
@@ -284,22 +236,20 @@ nav {
     font-family: 'Source Code Pro', 'Courier New', monospace;
     background: rgba(0, 0, 0, 0.322);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    /* Sombra sutil */
-
 }
 
-.enlace {
+.home__link {
     color: #00f7ff;
     text-decoration: none;
     font-weight: bold;
 }
 
-.enlace:hover {
+.home__link:hover {
     text-decoration: underline;
     color: #2980b9;
 }
 
-.container {
+.home__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -308,7 +258,7 @@ nav {
     margin: auto;
 }
 
-.content {
+.home__content {
     position: relative;
     flex: 1 1 30%;
     /* 3 columnas */
@@ -324,7 +274,7 @@ nav {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.425);
 }
 
-.content>h3 {
+.home__subtitle {
     position: absolute;
     left: 10px;
     top: 10px;
@@ -338,19 +288,18 @@ nav {
     margin: 0;
 }
 
-.images-container {
+.home__images-container {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 
-.image img {
+.home__image img {
     width: 120px;
     height: auto;
     transition: transform 0.3s;
     animation: scale-up 2.5s infinite alternate ease-in-out;
 }
-
 
 @keyframes scale-up {
     from {
@@ -362,67 +311,47 @@ nav {
     }
 }
 
-/* Responsive: 3 filas en pantallas pequeñas */
 @media (max-width: 890px) {
-    .container {
+    .home__container {
         flex-direction: column;
         align-items: center;
     }
 
-    .content {
+    .home__content {
         flex: 1 1 100%;
         width: 90%;
     }
 
-    .image img {
+    .home__image img {
         width: 100px;
     }
 }
 
-
-
-/*------------------------BOTONES home------------------------------*/
-#home button {
-
+.home__button {
     padding: 15px 30px;
     border-radius: 12px;
     background: rgb(0 0 0 / 81%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.425);
-
     color: #ffffff;
-
-
     cursor: pointer;
-
     margin-top: 30px;
-
     font-size: 18px;
-
     text-transform: uppercase;
-
-
 }
 
-#home button:hover {
+.home__button:hover {
     transform: translateY(-2px);
 }
 
 
-
-
-
-
-
 /*-----------------------------------------ACERCA DE MI ---------------------------------------------------------------------*/
 
-#about {
+.section--about {
     padding: 20px;
     min-height: 100vh;
 }
 
-
-/* Contenedor principal */
-.about-content {
+.about__content {
     max-width: 1000px;
     margin-top: 20px;
     margin-bottom: auto;
@@ -431,44 +360,33 @@ nav {
     display: flex;
     gap: 20px;
     flex-direction: row;
-    /* Cambia de columna a fila */
     align-items: stretch;
 }
 
-/* Secciones */
-.about-content-seccion {
+.about__content-section {
     flex: 1;
-    /* Hace que ambas secciones ocupen el mismo espacio */
     min-width: 45%;
-    /* Evita que se achiquen demasiado */
-
     padding: 20px;
     background: rgb(0 0 0 / 81%);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(170, 166, 166, 0.021);
     animation: cambioColorBordeDiamante 4s infinite ease-in-out;
-
 }
 
-/* Details (Expansible) */
-details {
-
+.about__details {
     border-radius: 10px;
     padding: 10px;
     background: #1f202277;
     cursor: pointer;
     color: #ffffff;
-
 }
 
-details[open] {
+.about__details[open] {
     background: #1f202277;
     color: #ffffff;
-
 }
 
-/* Summary */
-summary {
+.about__summary {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -477,49 +395,42 @@ summary {
     cursor: pointer;
 }
 
-summary i {
+.about__summary i {
     transition: transform 0.7s ease;
 }
 
-/* Rotación del icono al abrir */
-details[open] summary i {
+.about__details[open] .about__summary i{
     transform: rotate(180deg);
 }
 
-/* Habilidades (Iconos) */
-.habilidades {
+.about__skills {
     margin-top: 15px;
     padding: 10px;
     background: #1f202277;
     border-radius: 10px;
     text-align: center;
-
-
 }
 
-/* Contenedor de iconos */
-.Tics {
+.about__skills-icons {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 15px;
     justify-items: center;
 }
 
-/* Imágenes de iconos */
-.Tics img {
+.about__skills-icons img {
     width: 60px;
     height: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Contenedor de cada icono */
-.icon-container {
+.about__icon-container {
     position: relative;
     display: inline-block;
 }
 
 /* Ocultar el texto por defecto */
-.tooltip {
+.about__tooltip {
     visibility: hidden;
     position: absolute;
     bottom: -25px;
@@ -535,20 +446,17 @@ details[open] summary i {
 }
 
 /* Mostrar el texto cuando el mouse está encima */
-.icon-container:hover .tooltip {
+.about__icon-container:hover .about__tooltip{
     visibility: visible;
     opacity: 1;
 }
 
-
-.Tics img:hover {
+.about__skills-icons img:hover {
     transform: scale(1.2);
     filter: brightness(1.2);
 }
 
-
-/* Contenedor de la galería */
-.galeria {
+.about__gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
@@ -556,24 +464,18 @@ details[open] summary i {
     margin-top: 20px;
 }
 
-
-
-.certificados {
+.about__certificates {
     margin-top: 35px;
-
-
 }
 
-.certificados h2 {
+.about__certificates h2 {
     color: white;
     text-align: center;
     background: #1f202277;
     border-radius: 5px;
-
 }
 
-/* Contenedor de cada certificado */
-.certificado {
+.about__certificate {
     text-align: center;
     background: rgba(35, 35, 36, 0.39);
     color: #ffffff;
@@ -584,13 +486,13 @@ details[open] summary i {
     animation: cambiocertificadocolor 6s infinite ease-out;
 }
 
-.certificado:hover {
+.about__certificate:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Miniaturas de certificados */
-.miniatura {
+.about__thumbnail{
     width: 100%;
     max-width: 200px;
     height: auto;
@@ -600,7 +502,7 @@ details[open] summary i {
     filter: brightness(88%);
 }
 
-.miniatura:hover {
+.about__thumbnail:hover {
     transform: scale(1.1);
 }
 
@@ -637,69 +539,46 @@ details[open] summary i {
     cursor: pointer;
 }
 
-
-
-
 @media (max-width: 768px) {
-    .about-content {
+    .about__content {
         flex-direction: column;
-        /* Cambia a columna en pantallas pequeñas */
         gap: 10px;
-        /* Reduce el espacio entre secciones */
     }
-
-    .about-content-seccion {
+    .about__content-seccion {
         min-width: 100%;
-        /* Ocupar todo el ancho disponible */
+
     }
 }
-
-
-
-
-
 
 @keyframes cambioColorBordeDiamante {
     0% {
         border-color: rgb(138, 43, 226);
-        /* Morado oscuro */
         box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4);
-        /* Brillo suave */
     }
 
     20% {
         border-color: rgb(186, 85, 211);
-        /* Morado intermedio */
         box-shadow: 0 0 8px rgba(186, 85, 211, 0.7), 0 0 15px rgba(186, 85, 211, 0.4);
-        /* Brillo medio */
     }
 
     40% {
         border-color: rgb(221, 160, 221);
-        /* Morado claro */
         box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5);
-        /* Brillo fuerte */
     }
 
     60% {
         border-color: rgb(255, 0, 255);
-        /* Morado brillante */
         box-shadow: 0 0 12px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.6);
-        /* Brillo intenso */
     }
 
     80% {
         border-color: rgb(221, 160, 221);
-        /* Vuelve al morado claro */
         box-shadow: 0 0 10px rgba(221, 160, 221, 0.8), 0 0 20px rgba(221, 160, 221, 0.5);
-        /* Brillo fuerte */
     }
 
     100% {
         border-color: rgb(138, 43, 226);
-        /* Morado oscuro */
         box-shadow: 0 0 5px rgba(138, 43, 226, 0.6), 0 0 10px rgba(138, 43, 226, 0.4);
-        /* Brillo suave */
     }
 
 }
@@ -707,84 +586,46 @@ details[open] summary i {
 @keyframes cambiocertificadocolor {
     0% {
         border-color: rgb(0, 85, 204);
-        /* Azul oscuro */
         box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4);
-        /* Brillo suave */
     }
 
     20% {
         border-color: rgb(0, 110, 255);
-        /* Azul intermedio */
         box-shadow: 0 0 8px rgba(0, 110, 255, 0.7), 0 0 15px rgba(0, 110, 255, 0.4);
-        /* Brillo medio */
     }
 
     40% {
         border-color: rgb(0, 140, 255);
-        /* Azul claro */
         box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5);
-        /* Brillo fuerte */
     }
 
     60% {
         border-color: rgb(0, 170, 255);
-        /* Azul brillante */
         box-shadow: 0 0 12px rgba(0, 170, 255, 0.8), 0 0 25px rgba(0, 170, 255, 0.6);
-        /* Brillo intenso */
     }
 
     80% {
         border-color: rgb(0, 140, 255);
-        /* Vuelve al azul claro */
         box-shadow: 0 0 10px rgba(0, 140, 255, 0.8), 0 0 20px rgba(0, 140, 255, 0.5);
-        /* Brillo fuerte */
     }
 
     100% {
         border-color: rgb(0, 85, 204);
-        /* Azul oscuro */
         box-shadow: 0 0 5px rgba(0, 85, 204, 0.6), 0 0 10px rgba(0, 85, 204, 0.4);
-        /* Brillo suave */
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*------------------------------------------------ Sección Servicios -------------------------------------------------------------*/
 
-#functions {
-
+.section--functions{
     justify-content: center;
     align-items: center;
     color: #fff;
     padding: 20px 0;
     min-height: 53vh;
-
 }
 
-/* Contenedor principal */
-.organizador-functions {
+.functions__organizer {
     display: grid;
     grid-template-columns: 20% 55% 20%;
     align-items: center;
@@ -795,8 +636,7 @@ details[open] summary i {
     gap: 10px;
 }
 
-/* Contenedor de texto */
-.contenedor-functions {
+.functions__container {
     text-align: center;
     width: 100%;
     padding: 20px;
@@ -806,11 +646,9 @@ details[open] summary i {
     animation: cambioColorBordeDiamante 4s infinite ease-in-out;
     position: relative;
     min-height: 300px;
-    /* Altura mínima para evitar saltos */
 }
 
-/* Flechas de navegación */
-.flecha {
+.functions__arrow {
     background: none;
     border: none;
     font-size: 4rem;
@@ -820,7 +658,7 @@ details[open] summary i {
 
 }
 
-.flecha i {
+.functions__arrow i {
     background: rgba(0, 0, 0, 0.897);
     color: #fff;
     border: 2px solid rgb(255, 255, 255);
@@ -828,89 +666,76 @@ details[open] summary i {
 
 }
 
-
-/* Contenido de los textos */
-.divTextoServicios {
+.functions__text {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
     position: absolute;
-    /* Mantenemos el posicionamiento absoluto */
     top: 20px;
     left: 20px;
     right: 20px;
     text-align: justify;
 }
 
-.divTextoServicios.active {
+.functions__text.active {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease-in-out;
     position: static;
-    /* Cambiamos a posición estática cuando está activo */
 }
 
-/* Estilos para el texto dentro de los divs */
-.divTextoServicios h2 {
+.functions__title{
     margin-top: 0;
     font-size: 1.5rem;
     color: #00bcd4;
     text-align: center;
 }
 
-.divTextoServicios h1 {
+.functions__subtitle {
     font-size: 1.2rem;
     margin: 10px 0;
 }
 
-.divTextoServicios p {
+.functions__description {
     font-size: 1rem;
     line-height: 1.5;
     margin-left: 30px;
     color: #ccc;
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
-    .organizador-functions {
+    .functions__organizer {
         grid-template-columns: 12% 70% 12%;
     }
 
-    .flecha {
+    .functions__arrow {
         font-size: 1.5rem;
     }
 
-    .divTextoServicios h2 {
+    .functions__title {
         font-size: 1.2rem;
     }
 
-    .divTextoServicios h1 {
+    .functions__subtitle{
         font-size: 1rem;
     }
 
-    .divTextoServicios p {
+    .functions__description{
         font-size: 0.9rem;
     }
 }
 
 
-
-
-
-
-/* ----------------------------------------Sección Portafolio - Texto centrado */
-#portfolio {
-
+/* ----------------------------------------Sección Portafolio ------------------------------------------------------------------------------*/
+.section--portfolio {
     min-height: 63vh;
     background-image: url('imagenes/construccion2.gif');
     background-position: center top;
     background-size: cover;
     background-repeat: repeat;
-
-
 }
 
-#portfolio h1 {
+.section--portfolio h1 {
     text-align: center;
     margin: auto;
     color: black;
@@ -918,15 +743,10 @@ details[open] summary i {
     border: #000000;
     background-color: yellow;
     letter-spacing: 13px;
-
 }
 
-
-
-
 /* -----------------------------------------------------------------------------------Estilos generales para la sección de contacto ---------------------------------*/
-#contact {
-
+.section--contact {
     padding: 4rem 2rem;
     min-height: 100vh;
     background-image: url('imagenes/computador2.gif');
@@ -940,7 +760,7 @@ details[open] summary i {
     position: relative;
 }
 
-#contact h2 {
+.section--contact h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -949,8 +769,7 @@ details[open] summary i {
     letter-spacing: 2px;
 }
 
-/* Estilos para el formulario */
-#contact form {
+.contact-form {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.1rem;
@@ -962,7 +781,7 @@ details[open] summary i {
     box-shadow: 0 8px 32px rgb(0 0 0 / 89%);
 }
 
-#contact label {
+.contact-form__label {
     font-size: 1.2rem;
     font-weight: bold;
     color: #ffffff;
@@ -970,8 +789,8 @@ details[open] summary i {
     margin-bottom: 0.5rem;
 }
 
-#contact input,
-#contact textarea {
+.contact-form__input,
+.contact-form__textarea {
     width: 100%;
     padding: 12px;
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -982,20 +801,20 @@ details[open] summary i {
     transition: all 0.3s ease;
 }
 
-#contact input:focus,
-#contact textarea:focus {
+.contact-form__input:focus,
+.contact-form__textarea:focus {
     border-color: #ffffff;
     background: rgb(255, 255, 255);
     outline: none;
     transform: scale(1.02);
 }
 
-#contact textarea {
+.contact-form__textarea {
     resize: vertical;
     min-height: 150px;
 }
 
-#contact button {
+.contact-button {
     padding: 12px 1px;
     background: #7ce7e4;
     color: #000000;
@@ -1006,78 +825,60 @@ details[open] summary i {
     transition: all 0.3s ease;
 }
 
-#contact button:hover {
+.contact-button:hover {
     background: #00cce7;
     transform: translateY(-3px);
 
-
-
 }
 
-/* Efectos de hover para los inputs y textarea */
-#contact input:hover,
-#contact textarea:hover {
+.contact-form__input:hover,
+.contact-form__textarea:hover {
     border-color: #000000;
     background: rgba(255, 255, 255, 0.87);
 }
 
 
-
-/* Responsividad */
 @media (max-width: 768px) {
-    #contact {
+    .section--contact{
         padding: 2rem 1rem;
     }
-
-    #contact h2 {
+    .section--contact h2 {
         font-size: 2rem;
     }
-
-    #contact form {
+    .contact-form {
         padding: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    #contact h2 {
+    .section--contact h2  {
         font-size: 1.75rem;
     }
-
-    #contact input,
-    #contact textarea {
+    .contact-form__input,
+    .contact-form__textarea {
         padding: 10px;
     }
-
-    #contact button {
+    .contact-button {
         padding: 10px 20px;
     }
 }
 
 
-
-
-
-
-
 /*-----------------------------------------Estilos generales para el pie de página ------------------------------------------------------------------------*/
 
-footer {
+.footer {
     background-image: url('imagenes/fondo.jpg');
     background-size: cover;
-    /* Esto hace que la imagen cubra todo el fondo */
     background-position: center;
-    /* Centra la imagen */
     background-repeat: no-repeat;
-    /* Evita que la imagen se repita */
     color: #ffffff;
     padding: 7px 3px;
     text-align: center;
     font-family: 'Arial', sans-serif;
     box-shadow: 0 -4px 6px rgba(0, 0, 0);
-
 }
 
-.footer-container {
+.footer__container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -1086,32 +887,28 @@ footer {
     padding: 0 15px;
     flex-wrap: wrap;
     gap: 20px;
-
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
+.footer__left,
+.footer__center,
+.footer__right {
     flex: 1 1 30%;
-    /* Distribución flexible de los elementos */
     text-align: center;
     max-width: 380px;
-    /* Añadimos un max-width para evitar que los elementos crezcan demasiado */
 }
 
-.footer-left img {
+.footer__left img {
     width: 180px;
     margin-bottom: -49px;
     margin-left: 14px;
 }
-
 
 .social-links {
     display: flex;
     justify-content: center;
 }
 
-.social-links a {
+.social-links__icon {
     margin: 0 3px;
     margin-left: 15px;
     font-size: 2rem;
@@ -1121,42 +918,36 @@ footer {
     letter-spacing: 5px;
     animation: cambioColor 10s infinite linear;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }
 
-.footer-bottom {
+.footer__bottom {
     margin-top: 20px;
     margin-bottom: 1px;
     font-size: 0.9rem;
     letter-spacing: 1px;
     font-weight: bold;
-
-
 }
 
-.footer-bottom a {
+.footer__bottom a {
     color: #ffae00;
     text-decoration: none;
 }
 
-.footer-bottom a:hover {
+.footer__bottom a:hover {
     text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 991px) {
-    .footer-container {
+    .footer__container {
         flex-direction: column;
         text-align: center;
         gap: 15px;
-        /* Menos espacio entre las secciones en pantallas pequeñas */
     }
 
-    .footer-left,
-    .footer-center,
-    .footer-right {
+    .footer__left,
+    .footer__center,
+    .footer__right {
         max-width: 100%;
-        /* Se asegura que cada sección ocupe todo el ancho disponible */
         flex: 1 1 100%;
     }
 }

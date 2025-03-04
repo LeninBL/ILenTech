@@ -54,8 +54,9 @@ function presentarSeccion(sectionId) {
 
   // Mostrar la sección seleccionada
   document.getElementById(sectionId).style.display = "block"; // Despues de ocultar todas las secciones, mostramos la seccion seleccionada con el id en el header
+
   // Eliminar la clase 'active' de todos los enlaces
-  const enlaces = document.querySelectorAll("nav a");
+  const enlaces = document.querySelectorAll(".header__nav-link");
   enlaces.forEach((enlace) => enlace.classList.remove("active")); // Recorremos todos los enlaces y eliminamos la clase active
 
   // Añadir la clase 'active' al enlace correspondiente
@@ -64,6 +65,9 @@ function presentarSeccion(sectionId) {
     // Si el enlace activo existe, le agregamos la clase active
     enlaceActivo.classList.add("active"); // Agregamos la clase active al enlace activo, servira para cambiar de color el header seleccionado
   }
+
+    // Actualizar el hash de la URL para reflejar la sección mostrada
+    window.location.hash = `#${seccion}`;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -71,7 +75,7 @@ function presentarSeccion(sectionId) {
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Seleccionar elementos
-const miniaturas = document.querySelectorAll(".miniatura");
+const miniaturas = document.querySelectorAll(".about__thumbnail");
 // Crear elemento div con clase 'modal', luego agregarlo al body
 // El modal contendrá la imagen y el botón de cerrar en tamaño panalla completa
 const modal = document.createElement("div");
@@ -114,14 +118,31 @@ modal.addEventListener("click", (e) => {
 // -------------------------------------Para mostrar la sección de inicio por defecto cada vez que se cargue la página---------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  presentarSeccion("home"); // Mostramos la seccion de inicio por defecto al cargar la pagina con la funcion llamada presentarSeccion
-
-  // Asegurar que el modal esté oculto al cargar la página
+   // Asegurar que el modal esté oculto al cargar la página
   modal.style.display = "none";
-
   // Eliminar la clase 'active' de todos los enlaces al cargar la página
-  const enlaces = document.querySelectorAll("nav a");
+  const enlaces = document.querySelectorAll(".header__nav-link");
   enlaces.forEach((enlace) => enlace.classList.remove("active"));
+  // Verifica el hash de la URL y llama a la función correspondiente
+  const hash = window.location.hash.substring(1); // Obtener el hash sin el '#'
+  
+  // Si hay un hash, mostramos la sección correspondiente
+  if (hash) {
+    presentarSeccion(hash);
+  } else {
+    // Si no hay hash, mostramos la sección de inicio por defecto
+    presentarSeccion("home");
+  }
+
+
+
+  // Si hay un hash, aseguramos que el enlace correspondiente tenga la clase 'active'
+  if (hash) {
+    const enlaceActivo = document.querySelector(`.header__nav-link[href="#${hash}"]`);
+    if (enlaceActivo) {
+      enlaceActivo.classList.add("active");
+    }
+  }
 });
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -129,10 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   // Seleccionar elementos
-  const contenedor = document.querySelector(".contenedor-functions");
-  const textos = contenedor.querySelectorAll(".divTextoServicios");
-  const btnIzq = document.querySelector(".flecha-izq");
-  const btnDer = document.querySelector(".flecha-der");
+  const contenedor = document.querySelector(".functions__container");
+  const textos = contenedor.querySelectorAll(".functions__text");
+  const btnIzq = document.querySelector(".functions__arrow--left");
+  const btnDer = document.querySelector(".functions__arrow--right");
   // establecer el indice actual, nos servira para saber en que div estamos
   let indiceActual = 0;
 
