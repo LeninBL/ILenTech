@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación con JavaScript y TypeScript</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container-custom {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .metacognitive-box {
+            border-left: 4px solid #4f46e5;
+            background-color: #f8fafc;
+        }
+        #animationCanvas {
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container container-custom py-5">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-700 mb-2">Programación con JavaScript y TypeScript</h1>
+            <p class="text-gray-600">Fundamentos y aplicaciones prácticas</p>
+        </header>
+
+        <!-- Sección del Tema -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4 border-b pb-2">Temas Principales</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-3">JavaScript</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="font-medium">Motores JS:</span> V8, SpiderMonkey</li>
+                        <li><span class="font-medium">Variables:</span> let, const, var</li>
+                        <li><span class="font-medium">Tipos:</span> Primitivos y objetos</li>
+                        <li><span class="font-medium">Funciones:</span> Flecha, closures</li>
+                        <li><span class="font-medium">DOM:</span> Selectores, eventos</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-3">TypeScript</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="font-medium">Tipado:</span> Estático vs dinámico</li>
+                        <li><span class="font-medium">Interfaces:</span> Contratos de tipos</li>
+                        <li><span class="font-medium">Clases:</span> Modificadores de acceso</li>
+                        <li><span class="font-medium">Genéricos:</span> Reutilización de código</li>
+                        <li><span class="font-medium">Compilación:</span> TS a JS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejercicios de Laboratorio -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4 border-b pb-2">Ejercicios Prácticos</h2>
+            
+            <!-- Ejemplo 1: Tipos de datos -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-gray-800 mb-3">1. Variables y Tipos</h3>
+                <p class="text-gray-700 mb-4">Ejemplo interactivo con diferentes tipos de datos en JS.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <pre class="p-3 bg-gray-100 rounded-lg"><code>let nombre = "Juan";
+const edad = 30;
+let esProgramador = true;
+let habilidades = ["JS", "TS", "HTML"];</code></pre>
+                    </div>
+                    <div class="col-md-6">
+                        <button onclick="mostrarTipos()" class="btn btn-primary w-full h-full">Mostrar Tipos</button>
+                    </div>
+                </div>
+                <div id="tiposResultado" class="p-3 bg-blue-50 rounded-lg hidden"></div>
+            </div>
+            
+            <!-- Ejemplo 2: Funciones -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-gray-800 mb-3">2. Funciones en JS</h3>
+                <p class="text-gray-700 mb-4">Comparación entre función tradicional y arrow function.</p>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div class="p-3 bg-gray-100 rounded-lg">
+                        <h4 class="font-medium">Función Tradicional</h4>
+                        <pre><code>function suma(a, b) {
+  return a + b;
+}</code></pre>
+                        <button onclick="alert('Resultado: ' + suma(5, 3))" class="btn btn-sm btn-outline-primary mt-2">Ejecutar (5+3)</button>
+                    </div>
+                    <div class="p-3 bg-gray-100 rounded-lg">
+                        <h4 class="font-medium">Arrow Function</h4>
+                        <pre><code>const sumaArrow = (a, b) => a + b;</code></pre>
+                        <button onclick="alert('Resultado: ' + sumaArrow(5, 3))" class="btn btn-sm btn-outline-primary mt-2">Ejecutar (5+3)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ejemplo 3: Animación Canvas -->
+            <div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3">3. Animación con Canvas</h3>
+                <p class="text-gray-700 mb-4">Pelota rebotando usando JavaScript y el elemento canvas.</p>
+                
+                <div class="text-center">
+                    <canvas id="animationCanvas" width="400" height="200" class="mx-auto mb-3"></canvas>
+                    <div>
+                        <button onclick="iniciarAnimacion()" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Iniciar Animación</button>
+                        <button onclick="detenerAnimacion()" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition ml-2">Detener</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Reflexión Metacognitiva -->
+        <section class="p-6 metacognitive-box rounded-lg">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Reflexión Final</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-200 mb-4">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-2 border">Aspecto</th>
+                            <th class="px-4 py-2 border">JavaScript</th>
+                            <th class="px-4 py-2 border">TypeScript</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2 border font-medium">Flexibilidad</td>
+                            <td class="px-4 py-2 border">Alta (tipado dinámico)</td>
+                            <td class="px-4 py-2 border">Moderada (tipado estático)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 border font-medium">Escalabilidad</td>
+                            <td class="px-4 py-2 border">Desafíos en proyectos grandes</td>
+                            <td class="px-4 py-2 border">Excelente para proyectos complejos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p class="text-gray-700 mb-3">Durante esta práctica he aprendido que:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>JavaScript es ideal para prototipado rápido y proyectos pequeños.</li>
+                <li>TypeScript añade seguridad de tipos que previene errores comunes.</li>
+                <li>El manejo del DOM con JavaScript es fundamental para interactividad web.</li>
+                <li>Canvas ofrece posibilidades creativas para gráficos y animaciones.</li>
+            </ul>
+            <p class="text-gray-700 mt-3 font-medium">¿Cómo aplicar esto en el futuro?</p>
+            <p class="text-gray-700">Usaré TypeScript en proyectos profesionales para mayor robustez, y JavaScript para pequeños scripts y prototipos. Canvas será mi herramienta para visualizaciones dinámicas.</p>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Ejemplo 1: Tipos de datos
+        function mostrarTipos() {
+            const nombre = "Juan";
+            const edad = 30;
+            const esProgramador = true;
+            const habilidades = ["JS", "TS", "HTML"];
+            
+            const resultado = `
+                <p><strong>Nombre:</strong> ${nombre} (${typeof nombre})</p>
+                <p><strong>Edad:</strong> ${edad} (${typeof edad})</p>
+                <p><strong>Es programador:</strong> ${esProgramador} (${typeof esProgramador})</p>
+                <p><strong>Habilidades:</strong> ${habilidades.join(", ")} (${typeof habilidades})</p>
+            `;
+            
+            const divResultado = document.getElementById('tiposResultado');
+            divResultado.innerHTML = resultado;
+            divResultado.classList.remove('hidden');
+        }
+        
+        // Ejemplo 2: Funciones
+        function suma(a, b) {
+            return a + b;
+        }
+        
+        const sumaArrow = (a, b) => a + b;
+        
+        // Ejemplo 3: Animación Canvas
+        let animationId;
+        let pelota = {
+            x: 50,
+            y: 50,
+            radio: 15,
+            dx: 2,
+            dy: 2
+        };
+        
+        function iniciarAnimacion() {
+            const canvas = document.getElementById('animationCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            function animar() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Dibujar pelota
+                ctx.beginPath();
+                ctx.arc(pelota.x, pelota.y, pelota.radio, 0, Math.PI * 2);
+                ctx.fillStyle = '#4f46e5';
+                ctx.fill();
+                ctx.closePath();
+                
+                // Rebote en bordes
+                if(pelota.x + pelota.dx > canvas.width - pelota.radio || pelota.x + pelota.dx < pelota.radio) {
+                    pelota.dx = -pelota.dx;
+                }
+                if(pelota.y + pelota.dy > canvas.height - pelota.radio || pelota.y + pelota.dy < pelota.radio) {
+                    pelota.dy = -pelota.dy;
+                }
+                
+                // Mover pelota
+                pelota.x += pelota.dx;
+                pelota.y += pelota.dy;
+                
+                animationId = requestAnimationFrame(animar);
+            }
+            
+            animar();
+        }
+        
+        function detenerAnimacion() {
+            cancelAnimationFrame(animationId);
+        }
+    </script>
+</body>
+</html>

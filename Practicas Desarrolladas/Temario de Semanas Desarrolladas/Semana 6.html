@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework JS - Fundamentos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container-custom {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .metacognitive-box {
+            border-left: 4px solid #4f46e5;
+            background-color: #f8fafc;
+        }
+        .component {
+            border: 1px dashed #4f46e5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: #f0f4ff;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container container-custom py-5">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-700 mb-2">Framework JS - Fundamentos</h1>
+            <p class="text-gray-600">Componentes, props y estilización</p>
+        </header>
+
+        <!-- Sección del Tema -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4 border-b pb-2">Conceptos Clave</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-3">Estructura Básica</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="font-medium">Client-side rendering:</span> Renderizado en el navegador</li>
+                        <li><span class="font-medium">Gestión de dependencias:</span> npm/yarn/pnpm</li>
+                        <li><span class="font-medium">Herramientas:</span> Vite, Webpack, Parcel</li>
+                        <li><span class="font-medium">Componentes:</span> Bloques reutilizables</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-3">Estilización</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="font-medium">Inline styles:</span> Objetos de estilos en JS</li>
+                        <li><span class="font-medium">CSS Modules:</span> Estilos con scope local</li>
+                        <li><span class="font-medium">Styled Components:</span> CSS-in-JS</li>
+                        <li><span class="font-medium">Tailwind:</span> Clases utilitarias</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejercicios de Laboratorio -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4 border-b pb-2">Ejemplos Prácticos</h2>
+            
+            <!-- Ejemplo 1: Componente con Props -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-gray-800 mb-3">1. Componente con Props</h3>
+                <p class="text-gray-700 mb-4">Simulación de un componente React que acepta props.</p>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <pre class="p-3 bg-gray-100 rounded-lg"><code>function Saludo({ nombre, color }) {
+  return (
+    &lt;div style={{ color }}>
+      Hola, {nombre}!
+    &lt;/div>
+  );
+}
+
+// Uso:
+&lt;Saludo nombre="Ana" color="blue" /></code></pre>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <button onclick="mostrarSaludo()" class="btn btn-primary">Mostrar Saludo</button>
+                    </div>
+                </div>
+                <div id="saludoComponent" class="component hidden"></div>
+            </div>
+            
+            <!-- Ejemplo 2: Componente con Children -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-gray-800 mb-3">2. Componente con Children</h3>
+                <p class="text-gray-700 mb-4">Simulación de un componente que acepta contenido children.</p>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <pre class="p-3 bg-gray-100 rounded-lg"><code>function Tarjeta({ children, titulo }) {
+  return (
+    &lt;div className="tarjeta">
+      &lt;h3>{titulo}&lt;/h3>
+      &lt;div className="contenido">
+        {children}
+      &lt;/div>
+    &lt;/div>
+  );
+}
+
+// Uso:
+&lt;Tarjeta titulo="Ejemplo">
+  &lt;p>Contenido children&lt;/p>
+&lt;/Tarjeta></code></pre>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <button onclick="mostrarTarjeta()" class="btn btn-primary">Mostrar Tarjeta</button>
+                    </div>
+                </div>
+                <div id="tarjetaComponent" class="component hidden"></div>
+            </div>
+            
+            <!-- Ejemplo 3: Estilización -->
+            <div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3">3. Métodos de Estilización</h3>
+                <p class="text-gray-700 mb-4">Comparación de diferentes enfoques para estilizar componentes.</p>
+                
+                <div class="grid md:grid-cols-3 gap-3 text-center">
+                    <div class="p-3 border rounded-lg">
+                        <h4 class="font-medium mb-2">Inline Styles</h4>
+                        <div id="inlineStyle" style="color: white; background-color: #4f46e5; padding: 8px; border-radius: 4px;">
+                            Estilo en línea
+                        </div>
+                    </div>
+                    <div class="p-3 border rounded-lg">
+                        <h4 class="font-medium mb-2">CSS Modules</h4>
+                        <div class="modulo-estilo">Simulación módulo CSS</div>
+                    </div>
+                    <div class="p-3 border rounded-lg">
+                        <h4 class="font-medium mb-2">Styled Components</h4>
+                        <div id="styledComponent" class="styled-example">Estilo con JS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Reflexión Metacognitiva -->
+        <section class="p-6 metacognitive-box rounded-lg">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Reflexión Final</h2>
+            
+            <div class="overflow-x-auto mb-4">
+                <table class="min-w-full bg-white border border-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-2 border">Característica</th>
+                            <th class="px-4 py-2 border">Ventajas</th>
+                            <th class="px-4 py-2 border">Desventajas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2 border font-medium">Componentes</td>
+                            <td class="px-4 py-2 border">Reutilización, encapsulamiento</td>
+                            <td class="px-4 py-2 border">Curva de aprendizaje</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 border font-medium">Props/Children</td>
+                            <td class="px-4 py-2 border">Composición flexible</td>
+                            <td class="px-4 py-2 border">Prop drilling en árboles profundos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p class="text-gray-700 mb-3">Durante esta práctica he comprendido que:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Los componentes son la unidad fundamental de los frameworks modernos.</li>
+                <li>Las props permiten la comunicación entre componentes padre-hijo.</li>
+                <li>Los children ofrecen una forma poderosa de composición.</li>
+                <li>Cada método de estilización tiene sus casos de uso ideales.</li>
+            </ul>
+            <p class="text-gray-700 mt-3 font-medium">Aplicación en proyectos reales:</p>
+            <p class="text-gray-700">Usaré componentes para crear interfaces modulares, props para configuración y children para contenido dinámico. Evaluaré el método de estilización según las necesidades de cada proyecto.</p>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Ejemplo 1: Componente con props
+        function mostrarSaludo() {
+            const componente = document.getElementById('saludoComponent');
+            componente.innerHTML = `
+                <div style="color: #4f46e5; font-weight: 500;">
+                    Hola, Ana!
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Este es un componente que recibe las props "nombre" y "color"</p>
+            `;
+            componente.classList.remove('hidden');
+        }
+        
+        // Ejemplo 2: Componente con children
+        function mostrarTarjeta() {
+            const componente = document.getElementById('tarjetaComponent');
+            componente.innerHTML = `
+                <div class="border border-gray-300 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-2">Ejemplo</h3>
+                    <div class="text-gray-700">
+                        <p>Contenido children pasado al componente</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Este componente recibe "titulo" como prop y contenido como children</p>
+            `;
+            componente.classList.remove('hidden');
+        }
+        
+        // Ejemplo 3: Estilización (simulación styled components)
+        const styledDiv = document.getElementById('styledComponent');
+        styledDiv.style.cssText = `
+            color: white;
+            background-color: #10b981;
+            padding: 8px;
+            border-radius: 4px;
+            font-style: italic;
+        `;
+    </script>
+</body>
+</html>

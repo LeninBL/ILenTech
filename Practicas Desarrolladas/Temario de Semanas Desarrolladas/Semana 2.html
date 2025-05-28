@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resumen Tema: HTML y XML</title>
+ <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .container {
+    background: #ffffff;
+    max-width: 800px;
+    width: 100%;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
+    border-radius: 12px;
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: rgb(0, 102, 255);
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    color: #000000;
+  }
+
+  section {
+    margin-bottom: 35px;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1em;
+    outline: none;
+    color: #000000;
+    background: #ffffff;
+    border: 2px solid rgb(0, 102, 255);
+    border-radius: 6px;
+  }
+
+  button {
+    background: rgb(0, 102, 255);
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background: #0047b3;
+  }
+
+  /* Cuadro metacognitivo */
+  table.metacognitivo {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border: 2px solid rgb(0, 102, 255);
+    overflow: hidden;
+    margin-top: 20px;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  table.metacognitivo th,
+  table.metacognitivo td {
+    border: 1px solid rgb(0, 102, 255);
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+    }
+
+    input[type="text"] {
+      max-width: 100%;
+    }
+  }
+</style>
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>Resumen: HTML y XML</h1>
+
+    <section>
+      <h2>Construcción de página web con HTML y XML</h2>
+      <p>HTML estructura la página web con etiquetas semánticas, mientras XML define datos estructurados, usado para intercambio y configuración.</p>
+    </section>
+
+    <section>
+      <h2>Estructura y etiquetas principales de HTML5</h2>
+      <ul>
+        <li>&lt;!DOCTYPE html&gt; para declarar el tipo de documento.</li>
+        <li>&lt;html&gt;, &lt;head&gt;, &lt;body&gt;: bloques base.</li>
+        <li>&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;: etiquetas semánticas.</li>
+        <li>&lt;p&gt;, &lt;a&gt;, &lt;img&gt;, &lt;section&gt;, &lt;article&gt;, &lt;div&gt;.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Árbol DOM: nodos, renderizado y ciclo de vida</h2>
+      <ul>
+        <li>DOM es la representación en árbol de la página (nodos, elementos, texto).</li>
+        <li>El navegador parsea el HTML, genera el DOM y lo combina con CSS para renderizar.</li>
+        <li>Eventos: carga, DOMContentLoaded, interacción, actualización dinámica.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Optimización SEO y compatibilidad entre navegadores</h2>
+      <ul>
+        <li>Uso correcto de etiquetas semánticas para mejorar SEO.</li>
+        <li>Metadatos como &lt;meta&gt; y &lt;title&gt;.</li>
+        <li>Pruebas en diferentes navegadores y uso de polyfills.</li>
+        <li>Carga rápida y accesibilidad para usuarios y motores de búsqueda.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ejercicios de laboratorio y resultados</h2>
+      
+      <h3>Ejemplo 1: Crear y mostrar nodo DOM dinámicamente</h3>
+      <button onclick="crearNodo()">Agregar un párrafo nuevo</button>
+      <div id="contenedor"></div>
+      
+      <h3>Ejemplo 2: Mostrar estructura básica XML</h3>
+      <button onclick="mostrarXML()">Mostrar XML</button>
+      <pre id="xmlOutput" style="background:#61616154; padding: 10px; border-radius: 6px; color:rgb(0, 0, 0); max-height: 150px; overflow:auto;"></pre>
+
+      <script>
+        function crearNodo() {
+          const contenedor = document.getElementById('contenedor');
+          const p = document.createElement('p');
+          p.textContent = 'Este párrafo fue creado dinámicamente y agregado al DOM.';
+          p.style.color = '#00ff00'; 
+          contenedor.appendChild(p);
+        }
+
+        function mostrarXML() {
+          const xml = 
+`<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+  <libro id="1">
+    <titulo>Aprendiendo XML</titulo>
+    <autor>Juan Pérez</autor>
+  </libro>
+  <libro id="2">
+    <titulo>HTML5 Básico</titulo>
+    <autor>Ana Gómez</autor>
+  </libro>
+</libros>`;
+          document.getElementById('xmlOutput').textContent = xml;
+        }
+      </script>
+    </section>
+
+    <section>
+      <h2>Reflexión final metacognitiva</h2>
+      <table class="metacognitivo">
+        <tr>
+          <th>¿Qué aprendí?</th>
+          <th>¿Cómo lo aprendí?</th>
+        </tr>
+        <tr>
+          <td>La estructura fundamental de HTML5 y el papel del DOM en la renderización.</td>
+          <td>Practicando con ejemplos y visualizando la manipulación del DOM en tiempo real.</td>
+        </tr>
+        <tr>
+          <th>¿Qué puedo mejorar?</th>
+          <th>¿Para qué me sirve?</th>
+        </tr>
+        <tr>
+          <td>Profundizar en XML y su uso en datos estructurados.</td>
+          <td>Mejorar la construcción de páginas web y optimizar SEO para proyectos reales.</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

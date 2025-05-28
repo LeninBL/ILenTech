@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica Calificada - Emmet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      background-color: #00cc88;
+      color: white;
+      padding: 10px;
+    }
+    section {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    code, pre {
+      background: #eee;
+      padding: 8px;
+      display: block;
+      white-space: pre-wrap;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Práctica Calificada: Uso de Emmet</h1>
+
+  <section>
+    <h2>1. Menú de Navegación</h2>
+    <p><strong>Emmet:</strong></p>
+    <code>nav.nav&gt;ul&gt;li*4&gt;a[href="page$@-.html"]{Link$@-}</code>
+  </section>
+
+  <section>
+    <h2>2. Tabla con Encabezado y 3 Filas</h2>
+    <p><strong>Emmet:</strong></p>
+    <code>
+table.table&gt;thead&gt;th[scope="col"]{"#"}+th[scope="col"]{First}+th[scope="col"]{Second}+th[scope="col"]{Tree}^tbody&gt;tr*3&gt;th[scope="row"]{$}+td{Mark}+td{Otto}+td{Jhonson}
+    </code>
+  </section>
+
+  <section>
+    <h2>3. Estructura de Página con Container</h2>
+    <p><strong>Emmet:</strong></p>
+    <code>
+div#container&gt;header#header{Header}+nav#nav{Nav}+section#section{Section}&gt;article#article{Article}^aside#aside{Aside}+footer#footer{Footer}
+    </code>
+  </section>
+
+  <section>
+    <h2>4. Tabla de 4 Columnas y 21 Filas</h2>
+    <code>
+table&gt;thead&gt;th{Id}+th{Nombres}+th{Apellidos}+th{Dirección}^^tbody&gt;tr*21&gt;td{$}+td{Nombre}+td{Apellido}+td{Dirección}
+    </code>
+  </section>
+
+  <section>
+    <h2>5. Tabla de 20 Filas y 2 Columnas</h2>
+    <code>
+table&gt;thead&gt;tr&gt;th{ID}+th{Columna2}^tr*20&gt;td{Fila $@-}+tr
+    </code>
+  </section>
+
+  <section>
+    <h2>6. Página con Header, Main, y Footer</h2>
+    <code>
+header&gt;nav&gt;ul&gt;li*3&gt;a{Link $}^main&gt;section.card*3&gt;h2{Título $}+p{Descripción de la tarjeta $}^footer&gt;p{Footer}
+    </code>
+  </section>
+
+  <section>
+    <h2>7. Portafolio Personal</h2>
+    <code>
+head^body&gt;header&gt;h1{Juan Pérez - Desarrollador Web}+nav&gt;ul&gt;li*3&gt;a[href=#]{Sección $}^main&gt;section#sobre-mi&gt;h2{Sobre Mí}+p{Soy un desarrollador web con experiencia...}^section#proyectos&gt;h2{Proyectos}+ul&gt;li*3&gt;strong{Proyecto $}+p{Descripción del proyecto $}^section#contacto&gt;h2{Contacto}^form&gt;label{Nombre}+input:txt[name=nombre]+label{Email}+input:email[name=email]+button{Enviar}
+    </code>
+  </section>
+
+</body>
+</html>

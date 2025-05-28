@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resumen CSS Avanzado: Flexbox, Grid y Diseño Responsivo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 102, 153, 0.12); 
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: #fff;
+      padding: 25px 30px;
+      margin: 20px;
+      border: 3px solid #006699; 
+      color: #004466;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #004466;
+      margin-bottom: 20px;
+    }
+    section {
+      margin-bottom: 35px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    code {
+      background-color: #e6f0f8;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #005580;
+    }
+
+    .lab-flexbox {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      border: 2px solid #0099cc;
+      padding: 15px;
+      background: #e0f2ff;
+    }
+    .lab-flexbox > div {
+      background: #0073b1;
+      color: white;
+      padding: 20px;
+      flex: 1 1 150px;
+      text-align: center;
+      font-weight: bold;
+    }
+    /* Grid ejemplo */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      border: 2px solid #007399;
+      padding: 15px;
+      background: #d0e8ff;
+      color: #004466;
+      font-weight: bold;
+    }
+    .lab-grid > div {
+      background: #0099cc;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      border: 2px solid #006699;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th {
+      border: 1px solid #006699;
+      padding: 15px;
+      text-align: center;
+      color: #004466;
+      font-weight: 600;
+      background-color: #cce6ff;
+    }
+     td {
+      border: 1px solid #006699;
+      padding: 15px;
+      text-align: center;
+      color: #000000;
+      background-color: #cce6ff;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px 20px;
+        margin: 10px;
+      }
+      .lab-flexbox > div {
+        flex: 1 1 100%;
+      }
+      .lab-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resumen CSS Avanzado: Flexbox, Grid y Diseño Responsivo</h1>
+
+    <section>
+      <h2>Sintaxis y tipos de display</h2>
+      <ul>
+        <li><code>block</code>: Elementos ocupan toda la línea y empiezan en nueva línea.</li>
+        <li><code>inline</code>: Elementos en línea, sin romper línea.</li>
+        <li><code>inline-block</code>: En línea pero permite definir ancho y alto.</li>
+        <li><code>none</code>: Oculta el elemento.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Unidades absolutas y relativas</h2>
+      <ul>
+        <li><code>px</code>: Píxeles (absoluto)</li>
+        <li><code>em</code>, <code>rem</code>: Relativas al tamaño de fuente.</li>
+        <li><code>%</code>: Relativas al contenedor padre.</li>
+        <li><code>vw</code>, <code>vh</code>: Porcentaje del viewport ancho/alto.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Flexbox y Grid Layout</h2>
+      <p>Flexbox es ideal para layouts en una dimensión (fila o columna). Grid maneja dos dimensiones (filas y columnas).</p>
+
+      <h3>Ejemplo Flexbox</h3>
+      <div class="lab-flexbox">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+      </div>
+
+      <h3>Ejemplo Grid</h3>
+      <div class="lab-grid">
+        <div>Grid 1</div>
+        <div>Grid 2</div>
+        <div>Grid 3</div>
+        <div>Grid 4</div>
+        <div>Grid 5</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Position, diseño fluido y diseño responsivo</h2>
+      <ul>
+        <li><code>static</code>: Posición por defecto.</li>
+        <li><code>relative</code>: Relativo a su posición normal.</li>
+        <li><code>absolute</code>: Relativo al primer ancestro posicionado.</li>
+        <li><code>fixed</code>: Fijo en la ventana, no se mueve al hacer scroll.</li>
+      </ul>
+      <p>El diseño fluido usa unidades relativas y porcentajes para adaptarse al tamaño de la pantalla. El diseño responsivo usa media queries para adaptar estilos según el dispositivo.</p>
+    </section>
+
+    <section>
+      <h2>Laboratorio práctico: Diseño responsivo con Flexbox</h2>
+      <p>Observa cómo los cuadros se reorganizan en pantallas pequeñas usando Flexbox y diseño fluido.</p>
+      <div class="lab-flexbox">
+        <div>Cuadro A</div>
+        <div>Cuadro B</div>
+        <div>Cuadro C</div>
+      </div>
+      <p><em>Prueba redimensionar la ventana para ver el efecto responsivo.</em></p>
+    </section>
+
+    <section>
+      <h2>Reflexión metacognitiva</h2>
+      <table>
+        <tr>
+          <th>¿Qué aprendí?</th>
+          <th>¿Cómo lo aprendí?</th>
+        </tr>
+        <tr>
+          <td>Las diferencias entre tipos de display, unidades de medida y cómo usar Flexbox y Grid para layouts modernos.</td>
+          <td>Revisando teoría y viendo ejemplos prácticos que se adaptan al tamaño de la pantalla.</td>
+        </tr>
+        <tr>
+          <th>¿Qué puedo mejorar?</th>
+          <th>¿Para qué me sirve?</th>
+        </tr>
+        <tr>
+          <td>Profundizar en media queries y animaciones para mejorar experiencia responsiva.</td>
+          <td>Para crear sitios que funcionen bien en cualquier dispositivo y mejoren usabilidad.</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

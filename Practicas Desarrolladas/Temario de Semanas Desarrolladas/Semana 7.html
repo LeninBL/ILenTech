@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos, APIs y Hooks en Framework JS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container-custom {
+            max-width: 700px;
+            margin:  auto;
+        }
+        .metacognitive-box {
+            border-left: 4px solid #4f46e5;
+            background-color: #f8fafc;
+        }
+        .component {
+            border: 1px dashed #4f46e5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: #f0f4ff;
+        }
+        .post-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            background-color: white;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #4f46e5;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container container-custom py-5">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-700 mb-2">Eventos, APIs y Hooks</h1>
+            <p class="text-gray-600">Fundamentos de Frameworks JS modernos</p>
+        </header>
+
+        <!-- Sección del Tema -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4 border-b pb-2">Conceptos Clave</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-3">Eventos y APIs</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="font-medium">Manejo de eventos:</span> onClick, onChange, onSubmit</li>
+                        <li><span class="font-medium">Consumo de APIs:</span> fetch, axios, async/await</li>
+                        <li><span class="font-medium">Renderizado condicional:</span> &&, ternarios</li>
+                        <li><span class="font-medium">Routing:</span> Navegación client-side</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium text-gray-800 mb-3">Hooks</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="font-medium">Estado:</span> useState, useReducer</li>
+                        <li><span class="font-medium">Efectos:</span> useEffect, useLayoutEffect</li>
+                        <li><span class="font-medium">Memoización:</span> useMemo, useCallback</li>
+                        <li><span class="font-medium">Referencias:</span> useRef, forwardRef</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejercicios de Laboratorio -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4 border-b pb-2">Ejemplos Prácticos</h2>
+            
+            <!-- Ejemplo 1: Eventos y Estado -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-gray-800 mb-3">1. Eventos y useState</h3>
+                <p class="text-gray-700 mb-4">Contador interactivo que muestra el uso de eventos y estado.</p>
+                
+                <div class="component text-center">
+                    <div class="text-4xl font-bold my-4" id="counterValue">0</div>
+                    <div class="flex justify-center gap-4">
+                        <button onclick="decrement()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">
+                            Decrementar
+                        </button>
+                        <button onclick="increment()" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">
+                            Incrementar
+                        </button>
+                        <button onclick="reset()" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition">
+                            Reset
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4">Simulación de useState y manejo de eventos</p>
+                </div>
+            </div>
+            
+            <!-- Ejemplo 2: Consumo de API -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-gray-800 mb-3">2. Consumo de API con useEffect</h3>
+                <p class="text-gray-700 mb-4">Fetch de datos de JSONPlaceholder simulando useEffect y async/await.</p>
+                
+                <div class="component">
+                    <div class="flex justify-between mb-4">
+                        <button onclick="fetchPosts()" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+                            Obtener Posts
+                        </button>
+                        <div id="loadingIndicator" class="hidden">
+                            <span class="loading"></span> Cargando...
+                        </div>
+                    </div>
+                    
+                    <div id="postsContainer"></div>
+                    <p class="text-sm text-gray-600 mt-4">Simulación de useEffect para fetching de datos</p>
+                </div>
+            </div>
+            
+            <!-- Ejemplo 3: Formulario con useRef -->
+            <div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3">3. Formulario con useRef</h3>
+                <p class="text-gray-700 mb-4">Manejo de formularios sin re-renderizados innecesarios.</p>
+                
+                <div class="component">
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Nombre</label>
+                            <input type="text" id="nameInput" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="emailInput" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        </div>
+                        <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+                            Enviar
+                        </button>
+                    </form>
+                    <div id="formOutput" class="mt-4 p-3 bg-gray-100 rounded hidden"></div>
+                    <p class="text-sm text-gray-600 mt-4">Simulación de useRef para acceso a elementos del DOM</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Reflexión Metacognitiva -->
+        <section class="p-6 metacognitive-box rounded-lg">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Reflexión Final</h2>
+            
+            <div class="overflow-x-auto mb-4">
+                <table class="min-w-full bg-white border border-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-2 border">Concepto</th>
+                            <th class="px-4 py-2 border">Uso Principal</th>
+                            <th class="px-4 py-2 border">Mejor Práctica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2 border font-medium">useState</td>
+                            <td class="px-4 py-2 border">Estado local del componente</td>
+                            <td class="px-4 py-2 border">Para datos que cambian y afectan la UI</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 border font-medium">useEffect</td>
+                            <td class="px-4 py-2 border">Efectos secundarios</td>
+                            <td class="px-4 py-2 border">Limpieza de suscripciones</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 border font-medium">useRef</td>
+                            <td class="px-4 py-2 border">Referencias a elementos</td>
+                            <td class="px-4 py-2 border">Cuando no se necesita re-render</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p class="text-gray-700 mb-3">A través de estos ejercicios he aprendido que:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Los hooks simplifican la gestión de estado y efectos en componentes funcionales.</li>
+                <li>useEffect es poderoso pero debe usarse con cuidado para evitar loops infinitos.</li>
+                <li>El consumo de APIs requiere manejo de estados de carga y error.</li>
+                <li>useRef es ideal para acceder al DOM directamente sin causar re-renders.</li>
+            </ul>
+            <p class="text-gray-700 mt-3 font-medium">Aplicación en proyectos reales:</p>
+            <p class="text-gray-700">Implementaré hooks para gestionar estado complejo, efectos secundarios y referencias. Usaré async/await para operaciones asíncronas con manejo de errores. Optimizaré rendimiento con useMemo y useCallback cuando sea necesario.</p>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Ejemplo 1: Contador con useState simulado
+        let counter = 0;
+        const counterElement = document.getElementById('counterValue');
+        
+        function updateCounter() {
+            counterElement.textContent = counter;
+        }
+        
+        function increment() {
+            counter++;
+            updateCounter();
+        }
+        
+        function decrement() {
+            counter--;
+            updateCounter();
+        }
+        
+        function reset() {
+            counter = 0;
+            updateCounter();
+        }
+        
+        // Ejemplo 2: Consumo de API (simulación useEffect y fetch)
+        async function fetchPosts() {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const postsContainer = document.getElementById('postsContainer');
+            
+            // Mostrar loading
+            loadingIndicator.classList.remove('hidden');
+            postsContainer.innerHTML = '';
+            
+            // Simular delay de red
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            try {
+                // Fetch real a JSONPlaceholder
+                const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
+                const posts = await response.json();
+                
+                // Renderizar posts
+                postsContainer.innerHTML = posts.map(post => `
+                    <div class="post-card">
+                        <h4 class="font-bold text-lg">${post.title}</h4>
+                        <p class="text-gray-600">${post.body}</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                postsContainer.innerHTML = `<p class="text-red-500">Error al cargar los posts: ${error.message}</p>`;
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+        
+        // Ejemplo 3: Formulario con useRef simulado
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const nameInput = document.getElementById('nameInput');
+            const emailInput = document.getElementById('emailInput');
+            const formOutput = document.getElementById('formOutput');
+            
+            formOutput.innerHTML = `
+                <p><strong>Nombre:</strong> ${nameInput.value}</p>
+                <p><strong>Email:</strong> ${emailInput.value}</p>
+            `;
+            
+            formOutput.classList.remove('hidden');
+            
+            // Simulación de reset después de enviar
+            setTimeout(() => {
+                nameInput.value = '';
+                emailInput.value = '';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

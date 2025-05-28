@@ -15,6 +15,8 @@ html {
     background-image: url('imagenes/computador.gif');
     background-position: center top;
     background-repeat: repeat;
+    
+
     line-height: 1.6;
     height: 100%;
     margin: 0;
@@ -743,23 +745,102 @@ main {
 
 
 /* ----------------------------------------Sección Portafolio ------------------------------------------------------------------------------*/
+/* Estilo general de la sección */
 .section--portfolio {
-    min-height: 63vh;
-    background-image: url('imagenes/construccion2.gif');
-    background-position: center top;
-    background-size: cover;
-    background-repeat: repeat;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
 }
 
-.section--portfolio h1 {
-    text-align: center;
+.portfolio__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
     margin: auto;
-    color: black;
-    width: 100%;
-    border: #000000;
-    background-color: yellow;
-    letter-spacing: 13px;
+        align-items: center;
+    justify-content: center;
 }
+
+/* Títulos */
+.section--portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+    position: relative;
+}
+
+.section--portfolio h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: orange;
+    bottom: -8px;
+    left: 0;
+    border-radius: 4px;
+    animation: glow 2s infinite ease-in-out;
+}
+
+/* Listas */
+.section--portfolio ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.section--portfolio li {
+    margin-bottom: 15px;
+}
+
+/* Enlaces */
+.section--portfolio a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.section--portfolio a:hover {
+    color: orange;
+    text-shadow: 0 0 8px orange;
+}
+
+/* Estilo para cada bloque de contenido */
+.portfolio__temario,
+.portfolio__practicas {
+    background-color: #000000;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(255, 165, 0, 0.2);
+}
+
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px orange;
+    }
+    50% {
+        box-shadow: 0 0 15px orange;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .section--portfolio {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .portfolio__temario,
+    .portfolio__practicas {
+        width: 48%;
+    }
+}
+
 
 /* -----------------------------------------------------------------------------------Estilos generales para la sección de contacto ---------------------------------*/
 .section--contact {

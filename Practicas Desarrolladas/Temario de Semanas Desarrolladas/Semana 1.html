@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resumen: HTML y XML</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 153, 204, 0.15); 
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+      margin: 20px;
+      border: 3px solid #0099cc; 
+
+    }
+    h1, h2 {
+      color: #007399;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      border: 2px solid #0099cc;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th {
+      border: 1px solid #0099cc;
+      padding: 15px;
+      text-align: center;
+      color: #005266;
+      font-weight: 600;
+    }
+      td {
+      border: 1px solid #0099cc;
+      padding: 15px;
+      text-align: center;
+      color: #000000;
+
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resumen: HTML y XML</h1>
+
+    <section>
+      <h2>Construcción de página web con HTML y XML</h2>
+      <p>HTML define la estructura y contenido visual de páginas web. XML se usa para almacenar y transportar datos estructurados, complementando la web.</p>
+    </section>
+
+    <section>
+      <h2>Estructura y etiquetas principales de HTML5</h2>
+      <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code> declara el documento.</li>
+        <li><code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> forman la base.</li>
+        <li>Etiquetas semánticas: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+        <li>Elementos comunes: <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Árbol DOM: nodos, renderizado y ciclo de vida</h2>
+      <ul>
+        <li>DOM es la representación en árbol del documento HTML.</li>
+        <li>El navegador crea el DOM al cargar la página y usa CSS para renderizar el contenido.</li>
+        <li>Eventos importantes: carga, <code>DOMContentLoaded</code>, interacción y actualizaciones dinámicas.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Optimización SEO y compatibilidad entre navegadores</h2>
+      <ul>
+        <li>Uso correcto de etiquetas semánticas para mejorar el posicionamiento.</li>
+        <li>Metadatos clave: <code>&lt;meta&gt;</code> y <code>&lt;title&gt;</code>.</li>
+        <li>Pruebas cruzadas y uso de polyfills para compatibilidad.</li>
+        <li>Optimización de carga y accesibilidad para usuarios y motores de búsqueda.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Reflexión metacognitiva</h2>
+      <table>
+        <tr>
+          <th>¿Qué aprendí?</th>
+          <th>¿Cómo lo aprendí?</th>
+        </tr>
+        <tr>
+          <td>La estructura y función básica de HTML5 y XML, y el papel del DOM en la web.</td>
+          <td>Estudiando la teoría y realizando ejemplos prácticos de construcción y manipulación de páginas.</td>
+        </tr>
+        <tr>
+          <th>¿Qué puedo mejorar?</th>
+          <th>¿Para qué me sirve?</th>
+        </tr>
+        <tr>
+          <td>Profundizar en manejo avanzado del DOM y técnicas SEO.</td>
+          <td>Para crear páginas web más eficientes, accesibles y mejor posicionadas en buscadores.</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
