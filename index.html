@@ -10,8 +10,10 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="style.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <meta name="description" content="Portafolio de Dany Lenin - Estudiante de Ingeniería de Sistemas especializado en desarrollo web y ciberseguridad.">
-    <meta name="keywords" content="Portafolio, Desarrollo Web, Ciberseguridad, Hacking Ético, Python, HTML, CSS, JavaScript, UNCP">
+    <meta name="description"
+        content="Portafolio de Dany Lenin - Estudiante de Ingeniería de Sistemas especializado en desarrollo web y ciberseguridad.">
+    <meta name="keywords"
+        content="Portafolio, Desarrollo Web, Ciberseguridad, Hacking Ético, Python, HTML, CSS, JavaScript, UNCP">
     <meta name="author" content="Dany Lenin Boza Lara">
 </head>
 
@@ -24,11 +26,16 @@
         <nav class="header__nav">
             <ul class="header__nav-list" id="nav">
                 <button id="cerrar" class="header__menu-button--close"><i class="bi bi-x"></i></button>
-                <li class="header__nav-item"><a href="#home" class="header__nav-link" onclick="presentarSeccion('home')">Inicio</a></li>
-                <li class="header__nav-item"><a href="#about" class="header__nav-link" onclick="presentarSeccion('about')">Acerca de Mí</a></li>
-                <li class="header__nav-item"><a href="#functions" class="header__nav-link" onclick="presentarSeccion('functions')">Funciones</a></li>
-                <li class="header__nav-item"><a href="#portfolio" class="header__nav-link" onclick="presentarSeccion('portfolio')">Carpeta de Proyectos</a></li>
-                <li class="header__nav-item"><a href="#contact" class="header__nav-link" onclick="presentarSeccion('contact')">Contacto</a></li>
+                <li class="header__nav-item"><a href="#home" class="header__nav-link"
+                        onclick="presentarSeccion('home')">Inicio</a></li>
+                <li class="header__nav-item"><a href="#about" class="header__nav-link"
+                        onclick="presentarSeccion('about')">Acerca de Mí</a></li>
+                <li class="header__nav-item"><a href="#functions" class="header__nav-link"
+                        onclick="presentarSeccion('functions')">Funciones</a></li>
+                <li class="header__nav-item"><a href="#portfolio" class="header__nav-link"
+                        onclick="presentarSeccion('portfolio')">Carpeta de Proyectos</a></li>
+                <li class="header__nav-item"><a href="#contact" class="header__nav-link"
+                        onclick="presentarSeccion('contact')">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -37,14 +44,15 @@
     <main class="main">
         <!-- SECCIÓN DE INICIO-->
         <section id="home" class="section section--home">
-            <h1 >💻 <span>&lt;Hola y bienvenido a mi espacio virtual/&gt;</span> 🌐</h1>
-        
+            <h1>💻 <span>&lt;Hola y bienvenido a mi espacio virtual/&gt;</span> 🌐</h1>
+
             <div class="home__container">
                 <div class="home__content">
                     <h3 class="home__subtitle">📬 ¡Hablemos!</h3>
                     <div class="home__text">
                         <p>Soy DANY LENIN, estudiante de la
-                            <a href="https://sistemasuncp.edu.pe/" target="_blank" class="home__link">Facultad de Ingeniería
+                            <a href="https://sistemasuncp.edu.pe/" target="_blank" class="home__link">Facultad de
+                                Ingeniería
                                 de Sistemas</a>
                             con una sólida base académica proporcionada por la
                             <a href="https://uncp.edu.pe/" target="_blank" class="home__link">Universidad Nacional del
@@ -59,43 +67,47 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="home__content">
                     <h3 class="home__subtitle">🚀 Lo que sé hacer</h3>
                     <div class="home__text">
                         <p>Poseo habilidades en <span style="color: rgb(223, 238, 13); font-weight: bold;">desarrollo de
-                            software, ciberseguridad y hacking ético,</span> por lo que aporto soluciones tecnológicas que contribuyen al éxito estratégico de la organización.</p>
+                                software, ciberseguridad y hacking ético,</span> por lo que aporto soluciones
+                            tecnológicas que contribuyen al éxito estratégico de la organización.</p>
                     </div>
                     <div class="home__images-container">
                         <div class="home__image" id="tec">
                             <a href="#about" onclick="presentarSeccion('about')">
-                                <img loading="lazy" src="imagenes/iconos/tecn.png" alt="HARD" title="Habilidades Técnicas">
+                                <img loading="lazy" src="imagenes/iconos/tecn.png" alt="HARD"
+                                    title="Habilidades Técnicas">
                             </a>
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="home__content">
                     <h3 class="home__subtitle">🤗 Mi esencia</h3>
                     <div class="home__text">
                         <p>Aprendizaje y crecimiento continuo, <span style="color: #34db5e; font-weight: bold;">enfoque
-                            sistémico y capacidad para trabajar en equipo,</span> preparado para contribuir de manera significativa en entornos dinámicos.</p>
+                                sistémico y capacidad para trabajar en equipo,</span> preparado para contribuir de
+                            manera significativa en entornos dinámicos.</p>
                     </div>
                     <div class="home__images-container">
                         <div class="home__image">
                             <a href="#about" onclick="presentarSeccion('about')">
-                                <img loading="lazy" src="imagenes/iconos/soft.png" alt="SOFT" title="Habilidades Blandas">
+                                <img loading="lazy" src="imagenes/iconos/soft.png" alt="SOFT"
+                                    title="Habilidades Blandas">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        
+
             <button class="home__button" onclick="presentarSeccion('contact')">
                 <i class="bi bi-envelope"></i> Contáctame
             </button>
         </section>
-        
+
         <!-- SECCIÓN ACERCA DE MÍ -->
         <section id="about" class="section section--about">
             <div class="about__content">
@@ -105,13 +117,17 @@
                             <i class="bi bi-chevron-down"></i>
                             <p> HABILIDADES TÉCNICAS</p>
                         </summary>
-                        <p>Poseo habilidades en desarrollo frontend (HTML, CSS, JavaScript) y backend (Python), asi como SQL
+                        <p>Poseo habilidades en desarrollo frontend (HTML, CSS, JavaScript) y backend (Python), asi como
+                            SQL
                             Server y MySQL,
-                            habiendo trabajado con metodologías tradicionales y ágiles como SCRUM en proyectos académicos.
+                            habiendo trabajado con metodologías tradicionales y ágiles como SCRUM en proyectos
+                            académicos.
                             Además, cuento
-                            con una especialización en redes, hacking ético y ciberseguridad, con formación en Cisco. Manejo
+                            con una especialización en redes, hacking ético y ciberseguridad, con formación en Cisco.
+                            Manejo
                             herramientas
-                            como Nmap, Wireshark y Metasploit, y tengo conocimientos en la implementación de la ISO 27001.
+                            como Nmap, Wireshark y Metasploit, y tengo conocimientos en la implementación de la ISO
+                            27001.
                             También tengo
                             conocimientos en el uso de sistemas operativos como Linux, Parrot OS y Windows.</p>
                     </details>
@@ -125,19 +141,22 @@
                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg" />
                             <img loading="lazy"
                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" />
-                            <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+                            <img loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
                             <img loading="lazy"
                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg" />
                             <img loading="lazy"
                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
                             <img loading="lazy"
                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" />
-                            <img loading="lazy" src="imagenes/iconos/ethical-hacker-icon-illustration-vector.webp" alt="hacking">
-                            <img loading="lazy" src="imagenes/iconos/metasploit-framework-logo.svg.png" alt="metasploit">
+                            <img loading="lazy" src="imagenes/iconos/ethical-hacker-icon-illustration-vector.webp"
+                                alt="hacking">
+                            <img loading="lazy" src="imagenes/iconos/metasploit-framework-logo.svg.png"
+                                alt="metasploit">
                             <img loading="lazy" src="imagenes/iconos/office-365-logo.svg" alt="office">
                             <img loading="lazy" src="imagenes/iconos/nmap-logo-256x256-1.png" alt="nmap">
                             <img loading="lazy" src="imagenes/iconos/ingles.png" alt="Ingles">
-    
+
                         </div>
                     </div>
                 </div>
@@ -148,14 +167,17 @@
                             <i class="bi bi-chevron-down"></i>
                             <p> HABILIDADES BLANDAS</p>
                         </summary>
-                        <p>Soy una persona con habilidades blandas clave: me comunico de manera clara y escucho activamente, colaboro bien en
-                            equipo respetando opiniones y aprendiendo de los demás, resuelvo problemas con creatividad y me adapto fácilmente a
+                        <p>Soy una persona con habilidades blandas clave: me comunico de manera clara y escucho
+                            activamente, colaboro bien en
+                            equipo respetando opiniones y aprendiendo de los demás, resuelvo problemas con creatividad y
+                            me adapto fácilmente a
                             cambios o nuevos entornos.</p>
                     </details>
                     <div class="about__skills">
                         <div class="about__skills-icons about__skills-icons--2">
                             <div class="about__icon-container">
-                                <img loading="lazy" src="imagenes/iconos/comunicacionefectiva.png" alt="comunicacionefectiva">
+                                <img loading="lazy" src="imagenes/iconos/comunicacionefectiva.png"
+                                    alt="comunicacionefectiva">
                                 <span class="about__tooltip">Comunicación Efectiva</span>
                             </div>
                             <div class="about__icon-container">
@@ -167,11 +189,12 @@
                                 <span class="about__tooltip">Adaptabilidad</span>
                             </div>
                             <div class="about__icon-container">
-                                <img loading="lazy" src="imagenes/iconos/resoluciondeproblemas.png" alt="resoluciondeproblemas">
+                                <img loading="lazy" src="imagenes/iconos/resoluciondeproblemas.png"
+                                    alt="resoluciondeproblemas">
                                 <span class="about__tooltip">Resolución de Problemas</span>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -187,61 +210,75 @@
                         </div>
 
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/WORKSHOP ISO 27001 – HACKER MENTOR_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/WORKSHOP ISO 27001 – HACKER MENTOR_page-0001.jpg"
                                 alt="WORKSHOP ISO 27001" class="about__thumbnail">
                             <p class="about__certificate-text">Certificado de WORKSHOP ISO 27001</p>
                         </div>
 
 
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/INTRODUCTION TO DATA SCIENCE PYTHON – CONSTANCIA_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/INTRODUCTION TO DATA SCIENCE PYTHON – CONSTANCIA_page-0001.jpg"
                                 alt="INTRODUCTION TO DATA SCIENCE PYTHON" class="about__thumbnail">
                             <p class="about__certificate-text">Certificado de Introducción a Ciencia de Datos PYTHON</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/CER-Hacking Ético - USOS (virus, malware, troyanos)_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/CER-Hacking Ético - USOS (virus, malware, troyanos)_page-0001.jpg"
                                 alt="Certificado CER-Hacking Ético - USOS" class="about__thumbnail">
-                            <p class="about__certificate-text">Certificado de Hacking Ético - USOS (virus, malware, troyanos)</p>
+                            <p class="about__certificate-text">Certificado de Hacking Ético - USOS (virus, malware,
+                                troyanos)</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/JUNIOR CYBERSECURITY ANALIST CAREER PATH – CISCO_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/JUNIOR CYBERSECURITY ANALIST CAREER PATH – CISCO_page-0001.jpg"
                                 alt="Certificado de ANALISTA DE CIBERSEGURIDAD JUNIOR" class="about__thumbnail">
                             <p class="about__certificate-text">Certificado Analista De ciberseguridad JUNIOR</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/SQL SERVER FUNDAMENTALS – CONSTANCIA_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/SQL SERVER FUNDAMENTALS – CONSTANCIA_page-0001.jpg"
                                 alt="SQL SERVER FUNDAMENTALS" class="about__thumbnail">
                             <p class="about__certificate-text">Constancia SQL SERVER FUNDAMENTALS</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/PYTHON FUNDAMENTALS – CONSTANCIA_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/PYTHON FUNDAMENTALS – CONSTANCIA_page-0001.jpg"
                                 alt="Fundamentos de Python" class="about__thumbnail">
                             <p class="about__certificate-text">Constancia de Fundamentos de Python</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/Python_Essentials_1_Badge20240601-8-py3f3g_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/Python_Essentials_1_Badge20240601-8-py3f3g_page-0001.jpg"
                                 alt="Conceptos básicos de Python 1" class="about__thumbnail">
                             <p class="about__certificate-text">Certificado de Conceptos básicos de Python 1</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/Python_Essentials_2_Badge20240618-7-orrs2t_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/Python_Essentials_2_Badge20240618-7-orrs2t_page-0001.jpg"
                                 alt="Certificado de Conceptos básicos de Python 2" class="about__thumbnail">
                             <p class="about__certificate-text">Certificado de Conceptos básicos de Python 2</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/Networking_Basics_Badge20240505-8-8yp3et_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/Networking_Basics_Badge20240505-8-8yp3et_page-0001.jpg"
                                 alt="Certificado de Networking_Basics" class="about__thumbnail">
                             <p class="about__certificate-text">Certificado de Networking Basics</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/ANÁLISIS DE DATOS CON MATLAB – CONSTANCIA_page-0001.jpg"
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/ANÁLISIS DE DATOS CON MATLAB – CONSTANCIA_page-0001.jpg"
                                 alt="ANÁLISIS DE DATOS CON MATLAB" class="about__thumbnail">
                             <p class="about__certificate-text">Certificado de análisis de datos con MATLAB</p>
                         </div>
                         <div class="about__certificate">
-                            <img loading="lazy" src="/imagenes/CERTIFICADOS/Networking_Devices_and_Initial_Configuration_Badge20240525-8-j6m40o_page-0001.jpg"
-                                alt="Certificado de Dispositivos de red y configuración inicial" class="about__thumbnail">
-                            <p class="about__certificate-text">Certificado de Dispositivos de red y configuración inicial</p>
+                            <img loading="lazy"
+                                src="/imagenes/CERTIFICADOS/Networking_Devices_and_Initial_Configuration_Badge20240525-8-j6m40o_page-0001.jpg"
+                                alt="Certificado de Dispositivos de red y configuración inicial"
+                                class="about__thumbnail">
+                            <p class="about__certificate-text">Certificado de Dispositivos de red y configuración
+                                inicial</p>
                         </div>
                     </div>
                 </div>
@@ -257,42 +294,49 @@
                         <h2 class="functions__title">🌐 Ciberseguridad</h2>
                         <div>
                             <h1 class="functions__subtitle">Auditorías y Análisis de Vulnerabilidades:</h1>
-                            <p class="functions__description">Identificación de vulnerabilidades para mejorar la protección de datos y redes.</p>
+                            <p class="functions__description">Identificación de vulnerabilidades para mejorar la
+                                protección de datos y redes.</p>
                         </div>
                         <div>
                             <h1 class="functions__subtitle">Pruebas de Pentesting:</h1>
-                            <p class="functions__description">Pruebas básicas con Wireshark, Nmap, Metasploit para mejorar la seguridad en redes.</p>
+                            <p class="functions__description">Pruebas básicas con Wireshark, Nmap, Metasploit para
+                                mejorar la seguridad en redes.</p>
                         </div>
                         <div>
                             <h1 class="functions__subtitle">Consultoría en Estándares de Seguridad:</h1>
-                            <p class="functions__description">Asesoría sobre normativas básicas de protección de datos y sistemas.</p>
+                            <p class="functions__description">Asesoría sobre normativas básicas de protección de datos y
+                                sistemas.</p>
                         </div>
                     </div>
-                
+
                     <div class="functions__text">
                         <h2 class="functions__title">📡 Redes y Sistemas Operativos</h2>
                         <div>
                             <h1 class="functions__subtitle">Seguridad de Redes:</h1>
-                            <p class="functions__description">Identificación de riesgos y medidas para proteger redes.</p>
+                            <p class="functions__description">Identificación de riesgos y medidas para proteger redes.
+                            </p>
                         </div>
                         <div>
                             <h1 class="functions__subtitle">Configuración y Seguridad de SO:</h1>
-                            <p class="functions__description">Configuración, uso de herramientas y seguridad básica de Linux y Windows.</p>
+                            <p class="functions__description">Configuración, uso de herramientas y seguridad básica de
+                                Linux y Windows.</p>
                         </div>
                     </div>
-                
+
                     <div class="functions__text">
                         <h2 class="functions__title">💻 Desarrollo y Programación</h2>
                         <div>
-                            <h1 class="functions__subtitle">Desarrollo Backend (Python) y Fronted (HTML, CSS, JavaScript):</h1>
+                            <h1 class="functions__subtitle">Desarrollo Backend (Python) y Fronted (HTML, CSS,
+                                JavaScript):</h1>
                             <p class="functions__description">Desarrollo de aplicaciones, scripts, etc.</p>
                         </div>
                         <div>
                             <h1 class="functions__subtitle">Gestión de Bases de Datos:</h1>
-                            <p class="functions__description">Apoyo en la gestión básica de bases de datos (SQL Server, MySQL).</p>
+                            <p class="functions__description">Apoyo en la gestión básica de bases de datos (SQL Server,
+                                MySQL).</p>
                         </div>
                     </div>
-                
+
                     <div class="functions__text">
                         <h2 class="functions__title">🔧 Herramientas de Productividad</h2>
                         <div>
@@ -305,49 +349,69 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <button class="functions__arrow functions__arrow--right"><i class="bi bi-arrow-right"></i></button>
-            </div>                     
+            </div>
         </section>
-        
-<!-- SECCION PORTAFOLIO -->
-<section id="portfolio" class="section section--portfolio">
-    <div class="portfolio__container">
-            <!-- Temario de semanas desarrolladas -->
-    <div class="portfolio__temario">
-        <h2>Temario de Semanas Desarrolladas</h2>
-        <ul>
-    <li><a  target="_blank" href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 1.html">Semana 1: Introducción a las tecnologías web</a></li>
-    <li><a target="_blank" href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 2.html">Semana 2: HTML y XML</a></li>
-    <li><a target="_blank" href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 3.html">Semana 3: Diseño web con CSS3</a></li>
-    <li><a target="_blank"  href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 4.html">Semana 4: Librerías CSS: Bootstrap y Tailwind</a></li>
-    <li><a target="_blank" href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 5.html">Semana 5: Programación con Javascript y Typescript</a></li>
-    <li><a target="_blank" href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 6.html">Semana 6: Framework JS – Fundamentos</a></li>
-    <li><a  target="_blank" href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 7.html">Semana 7: Eventos, APIs y Hooks en Framework JS</a></li>
-</ul>
 
-    </div>
+        <!-- SECCION PORTAFOLIO -->
+        <section id="portfolio" class="section section--portfolio">
+            <div class="portfolio__container">
+                <!-- Temario de semanas desarrolladas -->
+                <div class="portfolio__temario">
+                    <h2>Temario de Semanas Desarrolladas</h2>
+                    <ul>
+                        <li><a target="_blank"
+                                href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 1.html">Semana 1:
+                                Introducción a las tecnologías web</a></li>
+                        <li><a target="_blank"
+                                href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 2.html">Semana 2:
+                                HTML y XML</a></li>
+                        <li><a target="_blank"
+                                href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 3.html">Semana 3:
+                                Diseño web con CSS3</a></li>
+                        <li><a target="_blank"
+                                href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 4.html">Semana 4:
+                                Librerías CSS: Bootstrap y Tailwind</a></li>
+                        <li><a target="_blank"
+                                href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 5.html">Semana 5:
+                                Programación con Javascript y Typescript</a></li>
+                        <li><a target="_blank"
+                                href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 6.html">Semana 6:
+                                Framework JS – Fundamentos</a></li>
+                        <li><a target="_blank"
+                                href="/Practicas Desarrolladas/Temario de Semanas Desarrolladas/Semana 7.html">Semana 7:
+                                Eventos, APIs y Hooks en Framework JS</a></li>
+                    </ul>
+
+                </div>
 
 
-    <div class="portfolio__practicas">
-        <h2>Prácticas Desarrolladas</h2>
-            <ul>
-                <li><a target="_blank" href="/Practicas Desarrolladas/Codigo_Emmet.html">Práctica Calificada 1: Código EMMET</a></li>
-                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LeninBL/GRUPO_BOZA_CLEMENTE_ROJAS-MALDONADO.git">Repositorio de Código: Práctica Calificada 2: Aplicación de HTML - CSS</a></li>
-                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LeninBL/GRUPO-YASER-HOSPINA-BOZA.git">Repositorio de código: Práctica Calificada 3: Aplicación de HTML - CSS - JS</a></li>
-            </ul>
-    </div>
-    </div>
-    
+                <div class="portfolio__practicas">
+                    <h2>Prácticas Desarrolladas</h2>
+                    <ul>
+                        <li><a target="_blank" href="/Practicas Desarrolladas/Codigo_Emmet.html">Práctica Calificada 1:
+                                Código EMMET</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://github.com/LeninBL/GRUPO_BOZA_CLEMENTE_ROJAS-MALDONADO.git">Repositorio de
+                                Código: Práctica Calificada 2: Aplicación de HTML - CSS</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://github.com/LeninBL/GRUPO-YASER-HOSPINA-BOZA.git">Repositorio de código:
+                                Práctica Calificada 3: Aplicación de HTML - CSS - JS</a></li>
+                    </ul>
+                </div>
+            </div>
 
-</section>
+
+        </section>
 
 
         <!--SECCION  CONTACTO-->
         <section id="contact" class="section section--contact">
             <h2>Contacto</h2>
 
-            <form id="contact-form" class="contact-form" action="https://formsubmit.co/dany20bl69@gmail.com" method="POST">
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/dany20bl69@gmail.com"
+                method="POST">
                 <div class="contact-form__group">
                     <label for="name" class="contact-form__label">Nombre:</label>
                     <input type="text" id="name" name="name" class="contact-form__input" required>
@@ -370,14 +434,14 @@
                 <button type="submit" class="contact-button">ENVIAR</button>
             </form>
         </section>
-    </main>    
+    </main>
     <!-- Pie de Página -->
     <footer id="footer1" class="footer">
         <div class="footer__container">
-            
+
             <!-- Bloque del logo -->
             <div class="footer__left">
-                <img loading="lazy" src="/imagenes/Marca_ ILenTech.jpeg" alt="ILenTech Logo" >
+                <img loading="lazy" src="/imagenes/Marca_ ILenTech.jpeg" alt="ILenTech Logo">
             </div>
 
             <!-- Descripción Personal -->
@@ -391,27 +455,31 @@
             <!-- Redes Sociales y CV -->
             <div class="footer__right">
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/dany-lenin-boza-lara-69a798313" target="_blank" title="LinkedIn"
-                        aria-label="LinkedIn" class="social-links__icon">
+                    <a href="https://www.linkedin.com/in/dany-lenin-boza-lara-69a798313" target="_blank"
+                        title="LinkedIn" aria-label="LinkedIn" class="social-links__icon">
                         <i class="bi bi-linkedin"></i>
                     </a>
-                    <a href="mailto:ejemplo@correo.com" target="_blank" title="Correo electrónico" aria-label="Correo electrónico"
-                        class="social-links__icon">
+                    <a href="mailto:ejemplo@correo.com" target="_blank" title="Correo electrónico"
+                        aria-label="Correo electrónico" class="social-links__icon">
                         <i class="bi bi-envelope"></i>
                     </a>
                     <a href="https://wa.me/51987654321" target="_blank" title="WhatsApp" aria-label="WhatsApp"
                         class="social-links__icon">
                         <i class="bi bi-whatsapp"></i>
                     </a>
+                    <a href="/condiciones-privacidad/CV.pdf" target="_blank" title="Ver CV" aria-label="Ver CV"
+                        class="social-links__icon">
+                        <i class="bi bi-file-earmark-person">cv</i> 
+                    </a>
+
                 </div>
             </div>
         </div>
 
         <div class="footer__bottom">
-            <p>© 2025 - ILenTech (LBL) | 
-                <a href="/condiciones-privacidad/politica.html" 
-                target="_blank" >
-                Términos, Condiciones y Privacidad
+            <p>© 2025 - ILenTech (LBL) |
+                <a href="/condiciones-privacidad/politica.html" target="_blank">
+                    Términos, Condiciones y Privacidad
                 </a>
             </p>
         </div>
@@ -420,4 +488,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
