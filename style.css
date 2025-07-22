@@ -758,8 +758,8 @@ main {
 .portfolio__container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 1200px;
+    gap: 10px;
+    max-width: 100%;
     margin: auto;
         align-items: center;
     justify-content: center;
@@ -810,14 +810,38 @@ main {
 }
 
 /* Estilo para cada bloque de contenido */
-.portfolio__temario,
-.portfolio__practicas {
+.portfolio__temario {
     background-color: #000000;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 0 40px rgba(255, 165, 0, 0.2);
 }
+.portfolio__temario_row{
+    display: flex   ;
+    
+    flex-direction: row;
+}
 
+.portfolio__temario1 {
+    background-color: #000000;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(255, 165, 0, 0.2);
+    color: #ffffff;
+}
+
+.card-body {
+
+    background-color: #000000;
+    padding: 25px;
+    border-radius: 8px;
+    color: #ffffff;
+
+}
+
+.container{
+    border: 1px solid #ffffff;
+}
 
 @keyframes glow {
     0%, 100% {
