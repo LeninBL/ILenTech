@@ -634,115 +634,146 @@ main {
 }
 
 /*------------------------------------------------ Sección Servicios -------------------------------------------------------------*/
+/*------------------------------------------------ Sección Servicios -------------------------------------------------------------*/
 
 .section--functions{
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 20px 0;
-    min-height: 53vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+color:#fff;
+padding:40px 0;
+min-height:55vh;
 }
 
-.functions__organizer {
-    display: grid;
-    grid-template-columns: 20% 55% 20%;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 50px auto;
-    gap: 10px;
+.functions__organizer{
+display:grid;
+grid-template-columns:15% 70% 15%;
+align-items:center;
+width:100%;
+max-width:1200px;
+margin:auto;
 }
 
-.functions__container {
-    text-align: center;
-    width: 100%;
-    padding: 20px;
-    background: rgb(0 0 0 / 81%);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(170, 166, 166, 0.021);
-    animation: cambioColorBordeDiamante 4s infinite ease-in-out;
-    position: relative;
-    min-height: 300px;
+.functions__container{
+position:relative;
+padding:30px;
+border-radius:15px;
+background:rgba(0, 0, 0, 0.616);
+min-height:320px;
+animation: cambiocertificadocolor 6s infinite ease-out;
+overflow:hidden;
 }
 
-.functions__arrow {
-    background: none;
-    border: none;
-    font-size: 4rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 10px;
+/* TARJETAS */
 
+.functions__card{
+display:flex;
+gap:15px;
+padding:15px;
+margin:15px 0;
+border-radius:10px;
+background:rgba(13, 18, 43, 0.76);
+transition:all .3s;
 }
 
-.functions__arrow i {
-    background: rgba(0, 0, 0, 0.897);
-    color: #fff;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 10px;
-
+.functions__card i{
+font-size:2rem;
+color:#ffffff;
 }
 
-.functions__text {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    text-align: justify;
-}
-
-.functions__text.active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease-in-out;
-    position: static;
-}
+/* TITULOS */
 
 .functions__title{
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #00bcd4;
-    text-align: center;
+font-size:1.6rem;
+text-align:center;
+color:#ffffff;
+margin-bottom:20px;
+text-shadow:0 0 10px #1d1d1d;
 }
 
-.functions__subtitle {
-    font-size: 1.2rem;
-    margin: 10px 0;
+.functions__text{
+opacity:0;
+transform:translateX(40px);
+transition:all .5s ease;
+position:absolute;
+top:20px;
+left:20px;
+right:20px;
 }
 
-.functions__description {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-left: 30px;
-    color: #ccc;
+.functions__text.active{
+opacity:1;
+transform:translateX(0);
+position:static;
 }
 
-@media (max-width: 768px) {
-    .functions__organizer {
-        grid-template-columns: 12% 70% 12%;
-    }
+/* FLECHAS */
 
-    .functions__arrow {
-        font-size: 1.5rem;
-    }
-
-    .functions__title {
-        font-size: 1.2rem;
-    }
-
-    .functions__subtitle{
-        font-size: 1rem;
-    }
-
-    .functions__description{
-        font-size: 0.9rem;
-    }
+.functions__arrow{
+background:none;
+border:none;
+cursor:pointer;
+font-size:3rem;
+color:white;
 }
 
+.functions__arrow i{
+background:#000;
+padding:10px 15px;
+border-radius:10px;
+transition:all .3s;
+}
+
+.functions__arrow:hover i{
+color:#f5af46f5;
+border-color:#0044ff7a;
+transform:scale(1.1);
+}
+
+/* INDICADORES */
+
+.functions__progress{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:25px;
+}
+
+.dot{
+width:10px;
+height:10px;
+background:#ffffff;
+border-radius:50%;
+transition:.3s;
+}
+
+.dot.active{
+background:#ffffff;
+transform:scale(1.4);
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+.functions__organizer{
+grid-template-columns:15% 70% 15%;
+}
+
+.functions__arrow{
+font-size:1.5rem;
+}
+
+.functions__card{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.functions__card i{
+font-size:1.5rem;
+}
+
+}
 
 /* ----------------------------------------Sección Portafolio ------------------------------------------------------------------------------*/
 /* Estilo general de la sección */
@@ -809,6 +840,11 @@ main {
     text-shadow: 0 0 8px orange;
 }
 
+.portfolio__temario1 .container .card {
+    border-color: #0049e7;
+}
+
+
 /* Estilo para cada bloque de contenido */
 .portfolio__temario {
     background-color: #000000;
@@ -837,11 +873,13 @@ main {
     border-radius: 8px;
     color: #ffffff;
 
+
 }
 
 .container{
-    border: 1px solid #ffffff;
+    border: none;
 }
+
 
 @keyframes glow {
     0%, 100% {

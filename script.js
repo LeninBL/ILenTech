@@ -165,39 +165,60 @@ document.addEventListener("DOMContentLoaded", () => {
 //-------------------------------------------------------------------------Cambio de Flechas-----------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  // Seleccionar elementos
-  const contenedor = document.querySelector(".functions__container");
-  const textos = contenedor.querySelectorAll(".functions__text");
-  const btnIzq = document.querySelector(".functions__arrow--left");
-  const btnDer = document.querySelector(".functions__arrow--right");
-  // establecer el indice actual, nos servira para saber en que div estamos
-  let indiceActual = 0;
 
-  function mostrarTexto(indice) {
-    textos.forEach((texto, i) => {
-      texto.classList.remove("active");
-      if (i === indice) {
-        texto.classList.add("active");
-      }
-    });
-  }
+const contenedor = document.querySelector(".functions__container");
+const textos = contenedor.querySelectorAll(".functions__text");
 
-  // Inicializa mostrando el primer div
-  mostrarTexto(indiceActual);
+const btnIzq = document.querySelector(".functions__arrow--left");
+const btnDer = document.querySelector(".functions__arrow--right");
 
-  // Evento para cambiar al siguiente
-  btnDer.addEventListener("click", function () {
-    indiceActual = (indiceActual + 1) % textos.length; // ESTO AYUDA A UBICAR EL INDICE EN EL DIV SIGUIENTE(MODULO DE RESIDUO)
-    mostrarTexto(indiceActual);
-  });
+const dots = document.querySelectorAll(".dot");
 
-  // Evento para cambiar al anterior
-  btnIzq.addEventListener("click", function () {
-    indiceActual = (indiceActual - 1 + textos.length) % textos.length;
-    mostrarTexto(indiceActual);
-  });
+let indiceActual = 0;
+
+function mostrarTexto(indice){
+
+textos.forEach((texto,i)=>{
+
+texto.classList.remove("active");
+
+if(i===indice){
+texto.classList.add("active");
+}
+
 });
 
+dots.forEach((dot,i)=>{
+
+dot.classList.remove("active");
+
+if(i===indice){
+dot.classList.add("active");
+}
+
+});
+
+}
+
+mostrarTexto(indiceActual);
+
+btnDer.addEventListener("click",()=>{
+
+indiceActual = (indiceActual + 1) % textos.length;
+
+mostrarTexto(indiceActual);
+
+});
+
+btnIzq.addEventListener("click",()=>{
+
+indiceActual = (indiceActual - 1 + textos.length) % textos.length;
+
+mostrarTexto(indiceActual);
+
+});
+
+});
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------Contacto-----------------------------------------------------------------
 document.getElementById("contact-form").addEventListener("submit", function (event) { 
